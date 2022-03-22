@@ -1,0 +1,59 @@
+.partners__logo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 6rem;
+    
+ 
+        
+        img{
+            object-fit: contain;
+            height: 3rem;
+            width: auto;
+            transition: all 0.5s ease-out;
+            
+            &:hover{
+                transform: scale(0.9);
+                
+            }
+        }
+        .partners__offer{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            span{
+                // display: block;
+            }
+            a{
+                background-color: $stone-200;
+                padding: 1rem 2rem;
+                transition: 0.2s;
+                font-weight: 500;
+                box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+                &:hover{
+                    background: green;
+                    color: white;
+                    
+                }
+            }
+        }
+    
+}
+@media screen and (max-width:767px) {
+
+  .partners__logo{
+    margin: 2rem 1rem;
+    img{
+        width: 40vw;
+        height: auto;
+    }
+    .partners__offer{
+        span{
+            font-size: 1.4rem;
+        }
+    }
+  }  
+}

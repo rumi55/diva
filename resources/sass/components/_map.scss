@@ -1,0 +1,86 @@
+.map__section {
+    margin: 3rem 6rem;
+    position: relative;
+
+
+    .map__code {
+        width: 70vw;
+        height: 50vh;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+        filter: grayscale(0.7);
+
+        div {
+            border-radius: 1rem;
+            height: 100%;
+        }
+
+
+    }
+
+    .map__content {
+        position: absolute;
+        top: 15%;
+        right: 0;
+
+        padding: 2rem;
+        background: $stone-200;
+        border-radius: 1rem;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+
+        .map__header {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .map__text {
+            display: grid;
+            gap: 1rem;
+
+            // color: white;
+            div {
+                display: grid;
+
+                &.map__phone {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+}
+
+
+// Map production START
+
+.mapprod__section {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    position: relative;
+    overflow: hidden;
+
+    .mapprod__img {
+
+
+        img {
+            object-fit: cover;
+        }
+
+
+    }
+
+    .mapprod__content {
+        margin: 2rem;
+        padding: 2rem;
+        background: $gray-100;
+        border-radius: 1rem;
+        z-index: 2;
+    }
+
+}
+
+// Map production END

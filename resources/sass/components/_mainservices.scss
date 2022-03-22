@@ -1,0 +1,117 @@
+.main__services {
+    margin: 3rem 6rem;
+
+    .heading {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .content__blocks {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        grid-template-areas:
+            'serv1 serv1 serv2 serv2'
+            'serv1 serv1 serv3 serv4';
+
+        .service__card {
+            // @apply shadow-lg;
+            position: relative;
+            overflow: hidden;
+            min-height: 30vh;
+            border-radius: 1rem;
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: rgba(51, 51, 51, 0.151);
+                z-index: 2;
+                transition: all 0.5s ease-out;
+            }
+            &:hover::after{
+                background:transparent;
+            }
+            &:hover img {
+
+                transform: scale(1.1);
+
+            }
+            &:hover .card__name{
+                text-shadow: 0px 0px 10px black;
+            }
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                object-fit: cover;
+                height: 100%;
+                transition: all 0.5s ease-out;
+
+
+
+
+            }
+
+            .card__name {
+                position: absolute;
+                padding: 1rem;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 600;
+                font-size: 2rem;
+                z-index: 3;
+
+            }
+
+
+            &:nth-child(1) {
+                grid-area: serv1;
+            }
+
+            &:nth-child(2) {
+                grid-area: serv2;
+            }
+
+            &:nth-child(3) {
+                grid-area: serv3;
+            }
+
+            &:nth-child(4) {
+                grid-area: serv4;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .main__services {
+        padding: 0;
+        margin: 2rem 1rem;
+        .content__blocks{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+            'serv1 serv1'
+            'serv2 serv2'
+            'serv3 serv3'
+            'serv4 serv4';
+            .service__card{
+              
+
+            }
+        }
+    }
+    
+}

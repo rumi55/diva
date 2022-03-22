@@ -1,0 +1,30 @@
+.production__product {
+    .product__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+
+        .product__item {
+            border-radius: 1rem;
+            background: linear-gradient(0deg, $gray-100, transparent);
+
+            &:hover .product__img img {
+                transform: scale(1.1);
+            }
+
+            .product__img {
+                img {
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+
+            .product__name {
+                padding: 0 1rem 1rem 1rem;
+                font-size: 1.3rem;
+                text-align: center;
+            }
+        }
+    }
+
+}

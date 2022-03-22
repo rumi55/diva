@@ -1,0 +1,185 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  width: auto;
+  margin: 0 6rem;
+  border-radius: 1rem;
+
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgb(51 51 51 / 30%);
+    }
+
+    &.current {
+      opacity: 1;
+
+      .content {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: all 0.2s ease-in-out 0.2s;
+      }
+    }
+
+    .content {
+
+      transform: translateX(-50%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+      justify-content: center;
+      opacity: 0;
+      color: white;
+      padding: 6rem;
+      text-shadow: 0px 0px 10px black;
+      z-index: 1;
+
+      .slider__heading {
+        // margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 3rem;
+
+      }
+
+      .slider__desc {
+        font-size: 1.3rem;
+        font-weight: 300;
+      }
+
+      .slider__logo {
+        display: flex;
+        margin-top: 1rem;
+        gap: 1rem;
+        max-width:16rem;
+
+        img {
+          padding: 1rem;
+          border-radius: 1rem;
+          background: white;
+          max-height: 6rem;
+          width: auto;
+          opacity: 0.8;
+          transition: 0.5s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+            transform: scale(1.05);
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+
+.buttons button#next {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+}
+
+
+.buttons button#prev {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+}
+
+
+
+.buttons button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: gray;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    margin: 0 1rem;
+
+    .slide {
+      &.current .content {
+        transform: translateY(0px);
+      }
+
+      .content {
+        padding: 1rem;
+        justify-content: center;
+
+        .slider__heading {
+          font-size: 2.4rem;
+          line-height: 3rem;
+        }
+        .slider__logo{
+          flex-wrap: wrap;
+          img{
+            max-width: 40vw;
+          }
+        }
+      }
+    }
+  }
+
+
+  .buttons button#prev,
+  .buttons button#next {
+    color: white;
+    background-color: transparent;
+    top: 70vh;
+  }
+}
+
+/* Backgorund Images */
+
+.slide:first-child {
+  background: url("https://source.unsplash.com/1600x900/?nature") no-repeat center top/cover;
+}
+
+.slide:nth-child(2) {
+  background: url("https://source.unsplash.com/1600x900/?nature,water") no-repeat center top/cover;
+}
+
+.slide:nth-child(3) {
+  background: url("https://source.unsplash.com/1600x900/?nature,mountain") no-repeat center top/cover;
+}
+
+.slide:nth-child(4) {
+  background: url("https://source.unsplash.com/1600x900/?nature,animal") no-repeat center top/cover;
+}
+
+.slide:nth-child(5) {
+  background: url("https://source.unsplash.com/1600x900/?nature,fountain") no-repeat center top/cover;
+}
+
+.slide:nth-child(6) {
+  background: url("https://source.unsplash.com/1600x900/?nature,fire") no-repeat center center/cover;
+}

@@ -1,0 +1,100 @@
+.factors__block {
+    .factors__heading {
+        margin-bottom: 2rem;
+        p{
+            font-size: 1.3rem;
+        }
+    }
+
+    .factors__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'one three'
+            'two four';
+        gap: 2rem;
+
+
+        .factors__item {
+            display: flex;
+            gap: 1rem;
+
+            &:first-child {
+                grid-area: one;
+            }
+
+            &:nth-child(2) {
+                grid-area: two;
+            }
+
+            &:nth-child(3) {
+                grid-area: three;
+            }
+
+            &:nth-child(4) {
+                grid-area: four;
+            }
+           
+
+            .factors__number {
+                font-size: 6rem;
+                font-weight: 800;
+                color: $gray-200;
+                line-height: 0.8;
+
+            }
+
+            .factors__content {
+             
+                .factors__name {
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+
+
+                .factors__desc {
+                    p {
+                        span {
+                            font-weight: 400;
+                        }
+                    }
+
+                    ul {
+                        display: grid;
+                        gap: 0.5rem;
+
+                        li {
+                            list-style: decimal;
+
+                            margin-left: 1.5rem;
+                        }
+                    }
+
+                    blockquote {
+                        padding: 1rem;
+                        border-left: 3px solid $gray-400;
+                        background: $gray-100;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .factors__block {
+
+
+        .factors__list {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'one'
+                'two'
+                'three'
+                'four';
+        }
+    }
+}

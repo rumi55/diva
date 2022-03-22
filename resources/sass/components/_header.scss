@@ -1,0 +1,166 @@
+// Topbar
+.topbar {
+    padding: 1rem 6rem 0 6rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+    // border-bottom: 1px solid gainsboro;
+    .phone {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .email,
+    .address {
+        display: grid;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+}
+
+// Header
+
+header {
+    display: flex;
+
+    width: 100%;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1rem 6rem;
+    z-index: 4;
+
+    &.onscroll {
+        position: sticky;
+        border-bottom: 1px solid $gray-100;
+        // box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+
+        .logo {
+            img {
+                max-height: 2rem;
+            }
+        }
+
+    }
+
+    .logo {
+        width: auto;
+
+        img {
+            transition: all 0.2s ease-in-out;
+            max-height: 3rem;
+        }
+    }
+}
+
+
+.menu {
+
+
+    ul {
+        display: flex;
+        gap: 1rem;
+
+        li {
+            a {
+                font-weight: 400;
+
+                &.active {
+
+                    color: green;
+
+
+                }
+            }
+        }
+    }
+}
+
+#menuToggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .topbar {
+        display: none;
+        // padding: 1rem;
+    }
+
+    header {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'logo burger'
+            'navbar navbar';
+
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .menu-icon {
+            grid-area: burger;
+        }
+
+        nav {
+            padding-top: 1rem;
+            grid-area: navbar;
+        }
+    }
+
+
+
+
+    .menu {
+        width: 100%;
+        height: auto;
+    }
+
+    .menu ul {
+
+        display: grid;
+        gap: 1rem;
+    }
+
+
+
+    .menu-icon {
+
+        display: flex;
+        justify-content: end;
+    }
+
+    #menuToggle~nav {
+        display: none;
+    }
+
+    #menuToggle:checked~nav {
+        display: grid;
+
+    }
+
+    .menu-icon i {
+        font-size: 1.7em;
+    }
+
+    // 3 cards block
+    .main__cards {
+
+        grid-template-columns: 1fr;
+        grid-template-areas: 'text'
+            'first'
+            'second'
+            'third';
+
+    }
+}
