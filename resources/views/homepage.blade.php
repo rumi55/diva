@@ -21,7 +21,7 @@
     @include('components.photo_block')
     {{-- @include('components.slider') --}}
     @include('components.logo_block')
-    @include('components.mainpart')
+    @include('components.services_main')
     @include('components.map_block')
 
 

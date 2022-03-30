@@ -30,7 +30,7 @@
                 bottom: 0;
                 right: 0;
                 left: 0;
-                background: rgba(51, 51, 51, 0.151);
+                background: rgba(51, 51, 51, 0.3);
                 z-index: 2;
                 transition: all 0.5s ease-out;
             }
@@ -43,7 +43,8 @@
 
             }
             &:hover .card__name{
-                text-shadow: 0px 0px 10px black;
+                text-shadow: 0px 0px 10px #111827;
+                        
             }
             img {
                 position: absolute;

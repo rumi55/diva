@@ -1147,12 +1147,14 @@ header .logo a img {
   justify-content: center;
 }
 .photo__block .photo__content .photo__heading {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 3rem;
+  text-shadow: 0px 0px 10px #111827;
 }
 .photo__block .photo__content .photo__desc {
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 400;
+  text-shadow: 0px 0px 10px #111827;
 }
 .photo__block .photo__content .photo__logo {
   display: flex;
@@ -1177,6 +1179,41 @@ header .logo a img {
 @media screen and (max-width: 768px) {
   .photo__block {
     margin: 0 1rem;
+  }
+  .photo__block .photo__img {
+    height: calc(100vh - 80px);
+  }
+  .photo__block .photo__content {
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  .photo__block .photo__content .photo__heading {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+  .photo__block .photo__content .photo__desc {
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+  .photo__block .photo__content .photo__logo {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: "logofirst logosecond" "logothird logosecond";
+  }
+  .photo__block .photo__content .photo__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0.5rem;
+  }
+  .photo__block .photo__content .photo__logo img:first-child {
+    grid-area: logofirst;
+  }
+  .photo__block .photo__content .photo__logo img:nth-child(2) {
+    grid-area: logosecond;
+  }
+  .photo__block .photo__content .photo__logo img:nth-child(3) {
+    grid-area: logothird;
   }
 }
 .partners__logo {
@@ -1408,7 +1445,7 @@ footer .bottom__footer {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(51, 51, 51, 0.151);
+  background: rgba(51, 51, 51, 0.3);
   z-index: 2;
   transition: all 0.5s ease-out;
 }
@@ -1419,7 +1456,7 @@ footer .bottom__footer {
   transform: scale(1.1);
 }
 .main__services .content__blocks .service__card:hover .card__name {
-  text-shadow: 0px 0px 10px black;
+  text-shadow: 0px 0px 10px #111827;
 }
 .main__services .content__blocks .service__card img {
   position: absolute;
