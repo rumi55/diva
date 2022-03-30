@@ -6,18 +6,19 @@
         <div class="content">
             <div class="slider__heading">Группа компаний «ДИВА»</div>
             <div class="slider__desc">
-                Выращивание кочанных салатов и листовых овощей. Услуги интегрированной логистики для розничных сетей и предприятий общественного питания.
+                Выращивание кочанных салатов и листовых овощей. Услуги интегрированной логистики для розничных сетей и
+                предприятий общественного питания.
             </div>
             <div class="slider__logo">
-              <img src="{{ asset('img/s3.svg') }}" alt="">
-              <img src="{{ asset('img/s2.svg') }}" alt="">
-              <img src="{{ asset('img/s4.svg') }}" alt="">
+                <img src="{{ asset('img/s3.svg') }}" alt="">
+                <img src="{{ asset('img/s2.svg') }}" alt="">
+                <img src="{{ asset('img/s4.svg') }}" alt="">
             </div>
         </div>
     </div>
     <div class="slide">
         <div class="content">
-          <p class="slider__heading">2. Nature Water</p>
+            <p class="slider__heading">2. Nature Water</p>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
                 maxime, voluptatibus labore doloremque vero!
@@ -26,15 +27,15 @@
     </div>
     <div class="slide">
         <div class="content">
-          <p class="slider__heading">3. Nature Mountain</p>
+            <p class="slider__heading">3. Nature Mountain</p>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
                 maxime, voluptatibus labore doloremque vero!
             </p>
-           
+
         </div>
     </div>
-    
+
 </div>
 <div class="buttons">
     <button id="prev"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"

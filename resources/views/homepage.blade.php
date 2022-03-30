@@ -1,13 +1,32 @@
 @extends('layouts.main')
+
+@section('seo_title')
+    @if ($post->seo_title)
+        {{ $post->seo_title }}
+    @else
+        {{ $post->title }}
+    @endif
+@endsection
+
+@section('seo_description')
+    @if ($post->seo_description)
+        {{ $post->seo_description }}
+    @else
+        {{ $post->description }}
+    @endif
+@endsection
+
 @section('content')
-    @include('components.slider')
-    @include('components.logo')
+
+    @include('components.photo_block')
+    {{-- @include('components.slider') --}}
+    @include('components.logo_block')
     @include('components.mainpart')
-    @include('components.map')
+    @include('components.map_block')
 
 
 
-    <script>
+    {{-- <script>
         const slides = document.querySelectorAll(".slide");
         const next = document.querySelector("#next");
         const prev = document.querySelector("#prev");
@@ -56,5 +75,5 @@
         if (auto) {
             slideInterval = setInterval(nextSlide, intervalTime);
         }
-    </script>
+    </script> --}}
 @endsection

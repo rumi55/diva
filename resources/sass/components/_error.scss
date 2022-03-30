@@ -1,0 +1,58 @@
+.error__404 {
+    background: $gray-700;
+    border-radius: 2rem;
+    height: 50vh;
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+
+        h1 {
+            color: $gray-300;
+            text-transform: lowercase;
+        }
+
+        a {
+            padding: 1rem 2rem;
+            // border-radius: 1rem;
+            background: $gray-400;
+            color: $gray-700;
+            font-weight: 500;
+
+            &:hover {
+                background: $gray-300;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .error__404 {
+        background: $gray-700;
+        border-radius: 2rem;
+        height: 50vh;
+
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            padding: 1rem;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+
+}

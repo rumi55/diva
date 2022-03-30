@@ -1,0 +1,126 @@
+.stages__block {
+    display: grid;
+    gap: 2rem;
+
+    .stages__heading {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+
+
+    .stages__tab {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        gap: 1rem;
+
+        ul {
+            display: grid;
+            width: 100%;
+
+            // gap: 1rem;
+
+
+            li {
+                // border: 2px solid $gray-100;
+                position: relative;
+                width: 100%;
+                background: white;
+                font-weight: 400;
+
+                label {
+                    margin: 1rem;
+                    display: block;
+                    cursor: pointer;
+                    user-select: none;
+                    
+
+                }
+            }
+
+        }
+
+        div {
+            background-color: $gray-100;
+            position: relative;
+
+            .tab__content {
+                padding: 2rem;
+                display: none;
+                font-size: 1.3rem;
+
+
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+.stages__tab>input:nth-child(1):checked~ul li:nth-child(1),
+.stages__tab>input:nth-child(2):checked~ul li:nth-child(2),
+.stages__tab>input:nth-child(3):checked~ul li:nth-child(3),
+.stages__tab>input:nth-child(4):checked~ul li:nth-child(4),
+.stages__tab>input:nth-child(5):checked~ul li:nth-child(5),
+.stages__tab>input:nth-child(6):checked~ul li:nth-child(6) {
+    background: $gray-100;
+
+}
+
+
+.stages__tab>input:nth-child(1):checked~div>div.tab__content:nth-child(1),
+.stages__tab>input:nth-child(2):checked~div>div.tab__content:nth-child(2),
+.stages__tab>input:nth-child(3):checked~div>div.tab__content:nth-child(3),
+.stages__tab>input:nth-child(4):checked~div>div.tab__content:nth-child(4),
+.stages__tab>input:nth-child(5):checked~div>div.tab__content:nth-child(5),
+.stages__tab>input:nth-child(6):checked~div>div.tab__content:nth-child(6) {
+    display: flex;
+}
+
+
+
+@media screen and (max-width:767px) {
+
+    .stages__block {
+        gap: 1rem;
+
+
+
+
+
+        .stages__tab {
+
+
+            ul {
+
+
+                li {
+                    label {
+                        margin: 1rem 0.5rem;
+                        font-size: 0.9rem;
+
+
+                    }
+                }
+
+            }
+
+            div {
+
+
+                .tab__content {
+                    padding: 1rem;
+                    font-size: 0.9rem;
+
+
+                }
+            }
+        }
+
+
+    }
+}

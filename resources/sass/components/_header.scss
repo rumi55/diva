@@ -31,29 +31,38 @@ header {
     top: 0;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    padding: 1rem 6rem;
+
+    padding: 0 6rem;
     z-index: 4;
 
     &.onscroll {
         position: sticky;
-        border-bottom: 1px solid $gray-100;
+        background: white;
+        border-bottom: 2px solid $gray-100;
         // box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 
         .logo {
-            img {
-                max-height: 2rem;
+            a {
+
+                img {
+                    max-height: 2rem;
+                    width: auto;
+
+                }
             }
         }
 
     }
 
     .logo {
-        width: auto;
+        min-width: 20%;
 
-        img {
-            transition: all 0.2s ease-in-out;
-            max-height: 3rem;
+        a {
+            img {
+                transition: all 0.05s ease-in-out;
+                max-height: 2.3rem;
+                width: auto;
+            }
         }
     }
 }
@@ -67,14 +76,48 @@ header {
         gap: 1rem;
 
         li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            input {
+                display: none;
+            }
+
+
             a {
+                padding: 1rem 0;
                 font-weight: 400;
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
 
                 &.active {
-
                     color: green;
+                }
 
+            }
 
+            label {
+                svg {
+                    transition: all 120ms ease-out;
+                    transform: rotate(180deg);
+                    stroke: $stone-700;
+                }
+            }
+
+            ul.slave {
+                opacity: 0;
+                transition: visibility 0s, opacity 0.2s linear;
+                z-index: 2;
+                background: $gray-100;
+                display: grid;
+
+                li {
+                    a {
+                        padding: 0;
+                    }
                 }
             }
         }
@@ -90,7 +133,7 @@ header {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .topbar {
         display: none;
         // padding: 1rem;
@@ -103,18 +146,104 @@ header {
         grid-template-areas: 'logo burger'
             'navbar navbar';
 
+        &.onscroll {
+            .logo {
+                img {
+                    max-height: 2rem;
+                    width: auto;
+                }
+            }
+        }
 
         .logo {
             grid-area: logo;
+
+            a {
+                img {
+                    max-height: 2rem;
+                    width: auto;
+                }
+            }
         }
 
         .menu-icon {
             grid-area: burger;
+            z-index: 5;
         }
 
-        nav {
-            padding-top: 1rem;
+        nav.menu {
+
             grid-area: navbar;
+
+            ul {
+                gap: 0;
+
+                li {
+                    border-bottom: 1px solid $gray-100;
+                    display: flex;
+
+                    a {
+                        width: 100%;
+                        padding: 1rem;
+                    }
+
+                    label {
+                        svg {
+                            width: 1rem;
+                            height: 1rem;
+                        }
+                    }
+
+                    input {
+
+                        &~ul.slave {
+                            visibility: hidden;
+                            opacity: 0;
+
+                        }
+
+                        &:checked~ul.slave {
+                            visibility: visible;
+                            opacity: 1;
+                            display: grid;
+
+                        }
+
+                        &:checked~label svg {
+                            transform: rotate(0deg);
+                            stroke: green;
+                        }
+
+                    }
+
+                    ul.slave {
+                        display: none;
+                        width: 100%;
+                        padding: 1rem;
+                        gap: 1rem;
+                        background: $gray-100;
+                        position: relative;
+
+
+                    }
+                }
+
+                .master {
+                    flex-wrap: wrap;
+                    gap: 0;
+                    justify-content: space-between;
+
+                    a {
+                        width: 90vw;
+                    }
+
+                    label {
+                        display: flex;
+                        justify-content: end;
+                        padding-right: 1rem;
+                    }
+                }
+            }
         }
     }
 
@@ -145,7 +274,18 @@ header {
     }
 
     #menuToggle:checked~nav {
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: white;
+        overflow: scroll;
+        margin-top: 63px;
+        border-top: 2px solid $gray-100;
 
     }
 
@@ -162,5 +302,96 @@ header {
             'second'
             'third';
 
+    }
+}
+
+
+
+@media screen and (min-width:768px) {
+    header {
+        .menu {
+
+
+            ul {
+                display: flex;
+                gap: 1rem;
+
+                li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    input {
+                        display: none;
+                    }
+
+
+                    &:hover {
+
+                        ul.slave {
+                            visibility: visible;
+                            opacity: 1;
+
+                        }
+
+                        label {
+                            svg {
+                                transform: rotate(0deg);
+                                stroke: green;
+                            }
+                        }
+                    }
+
+                    a {
+                        padding: 1rem 0;
+                        font-weight: 400;
+                        display: flex;
+                        gap: 0.5rem;
+                        align-items: center;
+
+                        &.active {
+                            color: green;
+                        }
+
+                    }
+
+                    label {
+
+                        svg {
+                            transition: all 120ms ease-out;
+                            transform: rotate(180deg);
+                            stroke: $stone-700;
+
+                        }
+                    }
+
+                    ul.slave {
+                        visibility: hidden;
+                        display: grid;
+                        opacity: 0;
+                        transition: visibility 0.2s, opacity 0.2s linear;
+                        padding: 1rem;
+                        position: absolute;
+                        z-index: 3;
+                        background: $gray-100;
+                        border-radius: 0.5rem;
+
+                        gap: 0.5rem;
+                        border: 1px solid $gray-100;
+                        top: 3rem;
+                        left: 0;
+                        box-shadow: rgb(25 69 75 / 28%) 2px 4px 32px;
+                        gap: 0;
+
+                        li {
+                            a {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

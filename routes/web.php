@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\SitemapXmlController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('home');
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-Route::get('/factor', function () {
-    return view('factor');
-})->name('factor');
-Route::get('/production', function () {
-    return view('production');
-})->name('production');
+Route::get('/', [PostsController::class, 'mainpage']);
+Route::get('/sitemap.xml', [SitemapXmlController::class, 'index']);
+
+
+//Объекты
+Route::get('/{slug1}/{slug2}', [PostsController::class, 'object']);
+//Категории и подкатегории
+Route::get('/{slug}', [PostsController::class, 'index']);

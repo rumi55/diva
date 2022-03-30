@@ -1,44 +1,18 @@
-<div class="about__block">
-    <p>
-        <span>Группа компаний «ДИВА»</span> специализируется на выращивании кочанных салатов и листовых овощей, и
-        оказании
-        услуг интегрированной логистики в обеспечении продуктовых торговых сетей и предприятий общественного питания
-        продукцией российских и зарубежных сельхозпроизводителей.
-    </p>
-</div>
-<div>
-    <h2>В состав Группы компаний «ДИВА» входят:</h2>
-</div>
-<div class="about__list">
+@foreach (\App\Models\Block::where('type', 'about')->get() as $item)
+    <div class="about__block">
+        <div class="about__heading">
+            <h2>{{ $item->title }}</h2>
+        </div>
+        <div class="about__list">
+            @foreach ($item->repeater as $repeater)
+                <div class="about__item">
+                    <div class="about__logo"><img src="/storage/{{ $repeater['picture'] }}" alt=""></div>
 
-    <div class="about__item">
-        <div class="about__logo"><img src="{{ asset('img/s6.svg') }}" alt=""></div>
-
-        <div class="about__text">
-            ООО «Родина» - сельскохозяйственное предприятие, специализирующееся на выращивании кочанного салата
-            «Айсберг», листового салата «Романо», Пекинской капусты и черешкового сельдерея, пользующихся растущим
-            спросом населения.
+                    <div class="about__text">
+                        {{ $repeater['description'] }}
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
-    <div class="about__item">
-        <div class="about__logo"><img src="{{ asset('img/s4.svg') }}" alt=""></div>
-
-        <div class="about__text">
-            ООО «Грин Микс» - компания, специализирующаяся на изучении рынка свежей зелени и салатов, запросов
-            конечных потребителей, разработке способов оптимизации взаимодействия участников цепи поставки,
-            инновациях в упаковке и разработке новых видов товарных позиций.
-
-        </div>
-    </div>
-    <div class="about__item">
-        <div class="about__logo"><img src="{{ asset('img/s5.svg') }}" alt=""></div>
-
-        <div class="about__text">
-            ООО ДИВА-Фреш» - системообразующее предприятие Группы компаний «ДИВА», специализирующееся на
-            3PL-логистике интегрированных поставок продукции российских и зарубежных сельхозпроизводителей в адрес
-            торговых продуктовых сетей и предприятий общественного питания в режиме «холодовой цепи».
-
-        </div>
-    </div>
-</div>
-
+@endforeach

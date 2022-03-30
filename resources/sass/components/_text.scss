@@ -1,0 +1,71 @@
+.text__block {
+    // margin: 1rem 0;
+
+    p {
+        font-size: 1.3rem;
+
+        strong {
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+    }
+
+    blockquote {
+        font-size: 1.3rem;
+        padding: 2rem;
+        background: $gray-100;
+
+
+        strong {
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+    }
+
+    p+blockquote,
+    blockquote+p,
+    blockquote+blockquote,
+    blockquote+ul,
+    ul+blockquote,
+    ol+blockquote,
+    blockquote+ol,
+    h2+p,
+    h2+p,
+    h3+p,
+    h2+ul,
+    h2+ul,
+    h2+ul,
+    h3+ol,
+    h3+ol,
+    ul+h2,
+    ul+h2,
+    ol+h3,
+    ol+h3 {
+        margin-top: 1.5rem;
+    }
+
+    ul,
+    ol {
+        list-style-position: inside;
+        display: grid;
+        gap: 1rem;
+
+        li {
+            font-size: 1.3rem;
+        }
+    }
+
+    ol {
+
+        list-style: decimal;
+    }
+
+    ul {
+
+        list-style-type: '✓ ';
+
+
+    }
+
+}

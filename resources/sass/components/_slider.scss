@@ -1,7 +1,8 @@
 .slider {
+
   position: relative;
   overflow: hidden;
-  height: 70vh;
+  height: 600px;
   width: auto;
   margin: 0 6rem;
   border-radius: 1rem;
@@ -68,7 +69,7 @@
         display: flex;
         margin-top: 1rem;
         gap: 1rem;
-        max-width:16rem;
+        max-width: 16rem;
 
         img {
           padding: 1rem;
@@ -125,6 +126,7 @@
 @media screen and (max-width: 768px) {
   .slider {
     margin: 0 1rem;
+    height: calc(100vh - 90px);
 
     .slide {
       &.current .content {
@@ -136,13 +138,23 @@
         justify-content: center;
 
         .slider__heading {
-          font-size: 2.4rem;
+          font-size: 2rem;
           line-height: 3rem;
         }
-        .slider__logo{
+
+        .slider__desc {
+          // font-size: 1.2rem;
+        }
+
+        .slider__logo {
+          // display: none;
+          display: flex;
           flex-wrap: wrap;
-          img{
-            max-width: 40vw;
+          max-width: none;
+
+          img {
+            max-width: 33vw;
+            border-radius: 1rem;
           }
         }
       }
@@ -152,9 +164,11 @@
 
   .buttons button#prev,
   .buttons button#next {
+    z-index: 3;
     color: white;
     background-color: transparent;
-    top: 70vh;
+    top: unset;
+    bottom: 3rem;
   }
 }
 

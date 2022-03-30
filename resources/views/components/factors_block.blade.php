@@ -1,4 +1,28 @@
+@foreach (\App\Models\Block::where('type', 'factors')->get() as $item)
 <div class="factors__block">
+    <div class="factors__heading">
+        <h2>{!! $item->title !!}</h2>
+        {!! $item->content !!}
+    </div>
+    <div class="factors__list">
+        @foreach ($item->repeater as $item=>$element)
+        <div class="factors__item">
+           
+            <div class="factors__number">{{ $element['number'] }}</div>
+            <div class="factors__content">
+                <div class="factors__name">{{ $element['title'] }}</div>
+                <div class="factors__desc">
+                    <p>{!! $element['description'] !!}
+                    </p>
+                </div>
+            </div>
+        </div>
+            
+        @endforeach
+    </div>
+</div>
+@endforeach
+{{-- <div class="factors__block">
     <div class="factors__heading">
         <h2>Факторы успеха Гк «Дива»</h2>
         <p>Мы нацелены на долгосрочное сотрудничество и стремимся находить лучшие решения для наших партнёров.</p>
@@ -69,4 +93,5 @@
         </div>
 
     </div>
-</div>
+</div> --}}
+

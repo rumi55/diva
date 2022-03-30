@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        @include('components.breadcrumbs')
+        {{-- @include('components.breadcrumbs') --}}
         @include('components.factors_block')
     </main>
        

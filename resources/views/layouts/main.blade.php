@@ -5,33 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>@yield('seo_title')</title>
+    <meta name="description" content="@yield('seo_description')" />
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 
 </head>
 
-<body class="antialiased">
+<body class="preload">
 
     @include('components.header')
 
     @yield('content')
-   
-  @include('components.footer')
 
-  <script>
-    window.onscroll = function() {myFunction()};
-    
-    function myFunction() {
-      if (document.documentElement.scrollTop > 50) {
-        document.getElementById("header").className = "onscroll";
-      } else {
-        document.getElementById("header").className = "";
-      }
-    }
-    </script>
+    @include('components.footer')
 
+
+    <script defer src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

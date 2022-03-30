@@ -1,51 +1,58 @@
 // About 3 logo START
 .about__block {
-    font-size: 1.3rem;
-}
-
-.about__list {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-
-
-    .about__item {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background: $gray-100;
-        padding: 2rem;
-
-
-        border-radius: 0.5rem;
-        transition: 0.5s ease-in-out;
-
-        &:hover {
-            background: white;
-            box-shadow: 0 0 10px 0px $stone-300;
-        }
-
-        .about__logo {
-            flex: none;
-
-            img {
-                height: 3rem;
-                width: auto;
-            }
-
-
-        }
-
-        .about__text {
-            height: 100%;
-        }
+    .about__heading {
+        margin-bottom: 2rem;
     }
 
+
+    .about__list {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+
+        .about__item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: $gray-100;
+            padding: 2rem;
+            border: 3px solid $gray-100;
+
+            border-radius: 0.5rem;
+            transition: 0.5s ease-in-out;
+
+            &:hover {
+                // background: linear-gradient(transparent, $gray-100);
+                background: white;
+                // box-shadow: 0 0 10px 0px $stone-300;
+                // border: 3px solid $gray-100;
+            }
+
+            .about__logo {
+                flex: none;
+
+                img {
+                    height: 3rem;
+                    width: auto;
+                }
+
+
+            }
+
+            .about__text {
+                height: 100%;
+            }
+        }
+
+    }
 }
 
 @media screen and (max-width:767px) {
-    .about__list {
-        flex-direction: column;
+    .about__block {
+        .about__list {
+            flex-direction: column;
+        }
     }
 }
 
@@ -57,7 +64,7 @@
 
 
 .team__block {
-    margin: 2rem 0;
+    // margin: 2rem 0;
 
 
 
@@ -77,7 +84,8 @@
 
             .team__img {
                 img {
-                    height: 100%;
+                    width: 100%;
+                    height: auto;
                     object-fit: cover;
                 }
             }
@@ -95,7 +103,7 @@
                 }
 
                 .team__text {
-                    span {
+                    strong {
                         font-weight: 500;
                     }
                 }
@@ -105,15 +113,16 @@
 
 
 }
-@media screen and (max-width:767px){
+
+@media screen and (max-width:767px) {
     .team__block {
         margin: 0;
-    
-    
+
+
         .team__list {
             display: grid;
             gap: 2rem;
-    
+
             .team__item {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -143,13 +152,18 @@
         .exp__item {
             padding: 1rem 1.5rem;
             background: $gray-100;
+            border: 3px solid $gray-100;
+            transition: all 0.5s ease-in-out;
+            &:hover{
+                background: white;
+            }
 
             .exp__number {
                 display: flex;
                 align-items: flex-end;
                 gap: 1rem;
                 margin-bottom: 1rem;
-               
+
 
                 p {
                     align-self: flex-end;
@@ -168,10 +182,10 @@
 
 @media screen and (max-width:767px) {
     .experience__block {
-        .exp__content{
+        .exp__content {
             grid-template-columns: 1fr;
         }
-        
+
     }
 }
 

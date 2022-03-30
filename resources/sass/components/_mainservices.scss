@@ -13,14 +13,14 @@
         gap: 1rem;
         grid-template-areas:
             'serv1 serv1 serv2 serv2'
-            'serv1 serv1 serv3 serv4';
+            'serv3 serv3 serv4 serv4';
 
         .service__card {
             // @apply shadow-lg;
             position: relative;
             overflow: hidden;
             min-height: 30vh;
-            border-radius: 1rem;
+            border-radius: 0.3rem;
             box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 
             &::after {

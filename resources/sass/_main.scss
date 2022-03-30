@@ -6,6 +6,19 @@ body {
     font-family: 'Rubik', sans-serif;
     color: $stone-700;
     font-weight: 300;
+    background: $gray-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &.preload *{
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        -o-transition: none !important;
+    }
+    &.active{
+        overflow: hidden;
+    }
+    
 }
 
 svg,
@@ -22,7 +35,8 @@ p {
 }
 
 a {
-    transition: all 0.5s ease-out;
+   
+    transition: 0.5s ease-out;
 
     &:hover {
         color: green;

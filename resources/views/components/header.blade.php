@@ -1,7 +1,8 @@
 <div class="topbar">
-    <div class="address"><span>Адрес</span>Нижний новгород, улица Какая-то, д.12</div>
-    <div class="email"><span>Email</span><a href="mailto:info@diva-nn.ru">info@diva-nn.ru</a></div>
-    <div class="phone"><a href="tel:+7 (978) 730 89 10">+7 (978) 730 89 10</a></div>
+    <div class="address"><span>Адрес</span>{{ $site->address_crop }}</div>
+    <div class="email"><span>Email</span><a href="mailto:{{ $site->email }}">{{ $site->email }}</a></div>
+    <div class="phone"><a
+            href="tel:{{ str_replace([' ', '(', ')', '-'], '', $site->phone) }}">{{ $site->phone }}</a></div>
 </div>
 <header id="header">
     <div class="logo">
@@ -14,12 +15,32 @@
         </svg></label>
     <nav class="menu">
         <ul>
-            <li><a @if (Route::is('home')) class="active" @endif href="/">Главная</a></li>
-            <li><a @if (Route::is('about')) class="active" @endif href="/about">О нас</a></li>
-            <li><a href="/">Услуги</a></li>
-            <li><a @if (Route::is('factor')) class="active" @endif href="/factor">Факторы успеха</a></li>
-            <li><a href="/">Ассортимент</a></li>
-            <li><a href="/">Контакты</a></li>
+            @foreach (\App\Models\Menu::where('type', '=', 'top')->get() as $item)
+                @foreach ($item->repeater as $menuitem)
+                    <li @if ($menuitem['subrep']) class="master" @endif><a
+                            href="/{{ $menuitem['menu_slug'] }}">{{ $menuitem['menu_title'] }}</a>
+                        @if ($menuitem['subrep'])
+                            <input type="checkbox" name="{{ Str::slug($menuitem['menu_title']) }}"
+                                id="{{ Str::slug($menuitem['menu_title']) }}">
+                            <label for="{{ Str::slug($menuitem['menu_title']) }}"><svg width="10" height="6"
+                                    viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="sc-1s30kz8-14 blwLTc">
+                                    <path d="M9 5L5 1L1 5" stroke=""></path>
+                                </svg></label>
+
+                            <ul class="slave">
+
+                                @foreach ($menuitem['subrep'] as $sub)
+                                    <li>
+                                        <a
+                                            href="/{{ $menuitem['menu_slug'] }}/{{ $sub['menu_subslug'] }}">{{ $sub['menu_subtitle'] }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
+            @endforeach
         </ul>
     </nav>
 </header>
