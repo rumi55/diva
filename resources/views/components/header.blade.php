@@ -20,9 +20,9 @@
                     <li @if ($menuitem['subrep']) class="master" @endif><a
                             href="/{{ $menuitem['menu_slug'] }}">{{ $menuitem['menu_title'] }}</a>
                         @if ($menuitem['subrep'])
-                            <input type="checkbox" name="{{ Str::slug($menuitem['menu_title']) }}"
-                                id="{{ Str::slug($menuitem['menu_title']) }}">
-                            <label for="{{ Str::slug($menuitem['menu_title']) }}"><svg width="10" height="6"
+                            <input type="checkbox" name="{{ Illuminate\Support\Str::slug($menuitem['menu_title']) }}"
+                                id="{{ Illuminate\Support\Str::slug($menuitem['menu_title']) }}">
+                            <label for="{{ Illuminate\Support\Str::slug($menuitem['menu_title']) }}"><svg width="10" height="6"
                                     viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="sc-1s30kz8-14 blwLTc">
                                     <path d="M9 5L5 1L1 5" stroke=""></path>
