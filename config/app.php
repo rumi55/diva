@@ -190,9 +190,8 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-
-    'aliases' => Facade::defaultAliases()->merge([
-        'ImageHelper' => App\Helpers\ImageHelper::class,
-    ])->toArray(),
+    'aliases' => [
+        'ImageHelper' => App\Helpers\ImageHelper::class,   
+    ],
 
 ];
