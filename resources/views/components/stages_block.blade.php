@@ -5,12 +5,15 @@
         </div>
         <div class="stages__tab flex mx-auto flex-wrap w-full">
             @foreach ($item->repeater as $item_rep => $element)
-                <input type="radio" class="input__tab" name="tabs" id="{{ Illuminate\Support\Str::slug($element['title']) }}"
-                    hidden="" aria-hidden="true" @if ($item_rep === 0) checked @endif>
+                <input type="radio" class="input__tab" name="tabs"
+                    id="{{ Illuminate\Support\Str::slug($element['title']) }}" hidden="" aria-hidden="true"
+                    @if ($item_rep === 0) checked @endif>
             @endforeach
             <ul>
                 @foreach ($item->repeater as $item_label)
-                    <li><label for="{{ Illuminate\Support\Str::slug($item_label['title']) }}">{{ $item_label['title'] }}</label></li>
+                    <li><label
+                            for="{{ Illuminate\Support\Str::slug($item_label['title']) }}">{{ $item_label['title'] }}</label>
+                    </li>
                 @endforeach
             </ul>
             <div class="w-full">
@@ -87,6 +90,3 @@
         </div>
     </div>
 </div> --}}
-
-
-
