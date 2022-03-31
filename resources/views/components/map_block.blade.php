@@ -13,7 +13,7 @@
         <div class="map__text">
             <div><span>Адрес:</span> Нижний Новгород — Улица Декабристов, дом 12, офис 443</div>
             <div class="map__phone">
-                <div><span>Отдел продаж:</span><a href="tel:89877504664">8 (960) 167-10-25</a></div>
+                <div><span>Отдел продаж:</span><a href="tel:89601671025">8 (960) 167-10-25</a></div>
                 <div><span>Отдел закупок:</span><a href="tel:89877504664">8 (987) 750-46-64</a></div>
             </div>
             <div><span>Email:</span><a href="">info@diva-nn.com</a></div>
