@@ -10,52 +10,34 @@ class ImageHelper
     public static $imagePath = 'storage/';
     public static $storePath = 'storage/cache/';
 
-    private static function getImagePath($filename)
+
+
+    public static function thumb($source, $quality = 100, $removeOld = false)
     {
-        $path = public_path(static::$imagePath . $filename);
-        if (file_exists($path)) {
-            return $path;
+        $dir = pathinfo($source, PATHINFO_DIRNAME);
+        $name = pathinfo($source, PATHINFO_FILENAME);
+        $destination = $dir . DIRECTORY_SEPARATOR . $name . '.webp';
+        $info = getimagesize($source);
+        $isAlpha = false;
+        if ($info['mime'] == 'image/jpeg')
+            $image = imagecreatefromjpeg($source);
+        elseif ($isAlpha = $info['mime'] == 'image/gif') {
+            $image = imagecreatefromgif($source);
+        } elseif ($isAlpha = $info['mime'] == 'image/png') {
+            $image = imagecreatefrompng($source);
+        } else {
+            return $source;
         }
-        return false;
-    }
+        if ($isAlpha) {
+            imagepalettetotruecolor($image);
+            imagealphablending($image, true);
+            imagesavealpha($image, true);
+        }
+        imagewebp($image, $destination, $quality);
 
-    private static function getCachePath($filename, $width, $height, $ext)
-    {
-        if ($path = static::getImagePath($filename)) {
-            $pathInfo = pathinfo($path);
-            if ($pathInfo['extension'] == 'svg') {
-                return asset(static::$storePath . $filename);
-            }
-            $filename = $pathInfo['filename'] . '-' . $width . '-' . $height . '.' . $ext;
-        }
-        $path = public_path(static::$storePath . $filename);
-        if (file_exists($path)) {
-            return asset(static::$storePath . $filename);
-        }
-        return false;
-    }
+        if ($removeOld)
+            unlink($source);
 
-    public static function thumb($filename, $width, $height, $ext='webp')
-    {
-        if (!$filename) {
-            return null;
-        }
-
-        if ($image = static::getCachePath($filename, $width, $height, $ext)) {
-            return $image;
-        }
-
-        if ($originPath = static::getImagePath($filename)) {
-            $pathInfo = pathinfo($originPath);
-            $name = $pathInfo['filename'] . '-' . $width . '-' .$height. '.' . $ext;
-            $path = public_path(static::$storePath . $name);
-            $image = Image::make($originPath)->encode($ext, 90);
-            $image->resize($width, $height, function($const) {
-                $const->aspectRatio();
-            })->save($path);
-            return asset(static::$storePath . $name);
-        }
-
-        return null;
+        return $destination;
     }
 }

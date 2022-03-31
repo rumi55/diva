@@ -612,7 +612,7 @@ body.preload * {
   -ms-transition: none !important;
   -o-transition: none !important;
 }
-body.active {
+body.active, body.lg-on {
   overflow: hidden;
 }
 

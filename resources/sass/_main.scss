@@ -1,7 +1,8 @@
-::selection{
+::selection {
     background: green;
     color: white;
 }
+
 body {
     font-family: 'Rubik', sans-serif;
     color: $stone-700;
@@ -9,16 +10,19 @@ body {
     background: $gray-50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    &.preload *{
+
+    &.preload * {
         -webkit-transition: none !important;
         -moz-transition: none !important;
         -ms-transition: none !important;
         -o-transition: none !important;
     }
-    &.active{
+
+    &.active,
+    &.lg-on {
         overflow: hidden;
     }
-    
+
 }
 
 svg,
@@ -35,7 +39,7 @@ p {
 }
 
 a {
-   
+
     transition: 0.5s ease-out;
 
     &:hover {
@@ -72,21 +76,25 @@ h3,
 .h3 {
     font-size: 1.6rem;
 }
-section{
+
+section {
     margin: 2rem 6rem;
+
     .heading {
         font-size: 2.4rem;
         font-weight: 600;
         margin-bottom: 1.5rem;
     }
 }
-main{
+
+main {
     display: grid;
     gap: 2rem;
     margin: 0 6rem 2rem 6rem;
 }
+
 @media screen and (max-width: 767px) {
-    main{
-        margin: 0 1rem 1rem 1rem; 
+    main {
+        margin: 0 1rem 1rem 1rem;
     }
 }

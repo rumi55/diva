@@ -7,7 +7,6 @@
     @endif
 
 
-    {{-- {{ Nette\Utils\Image::fromFile('img/1.jpg', $type); }} --}}
 @endsection
 
 @section('name')

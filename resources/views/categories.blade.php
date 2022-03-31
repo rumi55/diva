@@ -98,8 +98,11 @@
                                     @if ($item->preview)
                                         <img loading="lazy"
                                             class=" flex-none object-cover object-center w-full lg:h-64 md:h-36 rounded-t-xl"
-                                            src="/storage/{{ $item->preview }}" alt="">
+                                            src="{{ ImageHelper::thumb('storage' . '/' . $item->preview) }}" alt="">
+                                            
                                     @endif
+
+
 
                                     <div class="py-4 px-3 text-left">
                                         <p class="product__card__title m-0">{{ $item->title }}</p>

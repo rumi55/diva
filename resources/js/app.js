@@ -74,6 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //Lightgallery
-    require('./lightgallery')
+require('./lightgallery')
 require('./lg-utils')
 lightGallery(document.getElementById('anchor-tag'));
