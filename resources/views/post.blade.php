@@ -16,7 +16,7 @@
 @section('description')
     @if ($post->description)
         <div class="breadcrumbs__desc">
-            {{ $post->description }}
+            {!! $post->description !!}
         </div>
     @endif
 @endsection

@@ -1,5 +1,5 @@
 <div class="production__product">
-    <h2>Мы выращиваем</h2>
+    <h2>Мы поставляем</h2>
     <div class="product__list">
         @forelse (\App\Models\Product::orderBy('position')->get() as $item)
             <div class="product__item">
