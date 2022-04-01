@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // Scrollbar
         function scrollbar(e) {
-            if (e = window.screen.width) {
+            if (e = window.screen.availWidth) {
 
                 if (e > 767) {
                     if (document.documentElement.scrollTop > 50) {
