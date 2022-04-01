@@ -716,6 +716,7 @@ header {
 header.onscroll {
   position: -webkit-sticky;
   position: sticky;
+  width: 100%;
   background: white;
   border-bottom: 2px solid #f3f4f6;
 }
@@ -1199,7 +1200,7 @@ header .logo a img {
     margin: 0 1rem;
   }
   .photo__block .photo__img {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 150px);
   }
   .photo__block .photo__content {
     padding: 0 2rem;
