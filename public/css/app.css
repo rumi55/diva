@@ -1199,7 +1199,7 @@ header .logo a img {
     margin: 0 1rem;
   }
   .photo__block .photo__img {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 160px);
   }
   .photo__block .photo__content {
     padding: 0 2rem;
