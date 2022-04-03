@@ -1125,7 +1125,6 @@ header .logo a img {
 }
 
 .photo__block {
-  margin: 0 6rem;
   position: relative;
 }
 .photo__block .photo__img {
@@ -1196,14 +1195,11 @@ header .logo a img {
 }
 
 @media screen and (max-width: 768px) {
-  .photo__block {
-    margin: 0 1rem;
-  }
   .photo__block .photo__img {
     height: calc(100vh - 150px);
   }
   .photo__block .photo__content {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   .photo__block .photo__content .photo__items {
     grid-template-columns: 1fr;
@@ -1232,7 +1228,7 @@ header .logo a img {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  margin: 2rem 6rem;
+  margin: 2rem 0;
 }
 .partners__logo img {
   -o-object-fit: contain;
@@ -1275,7 +1271,6 @@ header .logo a img {
   }
 }
 .map__section {
-  margin: 3rem 6rem;
   position: relative;
 }
 .map__section .map__code {
@@ -1319,7 +1314,6 @@ header .logo a img {
 @media screen and (max-width: 767px) {
   .map__section {
     display: grid;
-    margin: 1rem 1rem 2rem 1rem;
     grid-template-areas: "map__content" "map__code";
   }
   .map__section .map__code {
@@ -1395,7 +1389,10 @@ footer .top__footer {
   border-top: 2px solid #f3f4f6;
 }
 footer .top__footer div svg {
-  max-height: 10rem;
+  max-height: 11rem;
+  padding: 2rem;
+  background: #f3f4f6;
+  border-radius: 1rem;
   width: auto;
 }
 footer .top__footer div .menu__heading {
@@ -1415,20 +1412,18 @@ footer .bottom__footer {
 
 @media screen and (max-width: 768px) {
   footer .top__footer {
-    padding: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 1rem;
   }
   footer .top__footer div svg {
     max-height: 8rem;
+    padding: 1rem;
   }
   footer .bottom__footer {
     padding: 1rem;
   }
-}
-.main__services {
-  margin: 3rem 6rem;
 }
 .main__services .heading {
   font-size: 2.4rem;
@@ -1506,10 +1501,6 @@ footer .bottom__footer {
 }
 
 @media screen and (max-width: 500px) {
-  .main__services {
-    padding: 0;
-    margin: 2rem 1rem;
-  }
   .main__services .content__blocks {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "serv1 serv1" "serv2 serv2" "serv3 serv3" "serv4 serv4";
@@ -1534,7 +1525,7 @@ footer .bottom__footer {
 }
 .breadcrumbs .breadcrumbs__image img {
   border-radius: 1rem;
-  max-height: 400px;
+  aspect-ratio: 4/1;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
@@ -1546,8 +1537,8 @@ footer .bottom__footer {
   display: flex;
   gap: 0.5rem;
   bottom: 0;
-  right: 0;
-  padding: 1rem 1.5rem;
+  left: 0;
+  padding: 1rem 1.5rem 1.5rem 4rem;
   z-index: 3;
 }
 .breadcrumbs .breadcrumbs__image .breadcrumbs__list li span {
@@ -1572,9 +1563,10 @@ footer .bottom__footer {
   left: 0;
   display: flex;
   color: white;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   z-index: 2;
+  padding: 4rem;
 }
 .breadcrumbs .breadcrumbs__desc {
   margin-top: 2rem;
@@ -1582,8 +1574,12 @@ footer .bottom__footer {
 }
 
 @media screen and (max-width: 767px) {
+  .breadcrumbs .breadcrumbs__image img {
+    aspect-ratio: 4/2;
+  }
   .breadcrumbs .breadcrumbs__image .breadcrumbs__list {
     width: 100%;
+    padding: 1rem;
   }
   .breadcrumbs .page__title {
     padding: 1rem;
@@ -1664,6 +1660,13 @@ footer .bottom__footer {
   .team__block {
     margin: 0;
   }
+  .team__block .team__heading h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .team__block .team__heading p {
+    font-size: 1.3rem;
+  }
   .team__block .team__list {
     display: grid;
     gap: 2rem;
@@ -1711,15 +1714,21 @@ footer .bottom__footer {
   line-height: 1;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 480px) {
   .experience__block .exp__content {
     grid-template-columns: 1fr;
   }
 }
-main .partners__logo {
-  margin: 0;
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .experience__block .exp__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .experience__block .exp__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .factors__block .factors__heading {
   margin-bottom: 2rem;
 }

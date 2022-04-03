@@ -10,7 +10,10 @@ footer {
 
 
             svg{
-                max-height: 10rem;
+                max-height: 11rem;
+                padding: 2rem;
+                background: $gray-100;
+                border-radius: 1rem;
                 width: auto;
             }
             // img {
@@ -55,13 +58,14 @@ footer {
     footer {
 
         .top__footer {
-            padding: 1rem;
+            padding: 2rem 1rem 1rem 1rem;
             display: grid;
             grid-template-columns: 2fr 2fr;
             gap: 1rem;
             div{
                 svg{
                     max-height: 8rem;
+                    padding: 1rem;
                 }
             }
         }

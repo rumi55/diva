@@ -117,6 +117,15 @@
 @media screen and (max-width:767px) {
     .team__block {
         margin: 0;
+        .team__heading {
+         h2{
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+         }
+         p{
+             font-size: 1.3rem;
+         }
+        }
 
 
         .team__list {
@@ -180,7 +189,7 @@
 
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:480px) {
     .experience__block {
         .exp__content {
             grid-template-columns: 1fr;
@@ -188,11 +197,24 @@
 
     }
 }
+@media screen and (min-width:481px) and (max-width:767px) {
+    .experience__block {
+        .exp__content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+}
+
+
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .experience__block {
+        .exp__content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+}
 
 // Experience block END
 
-main {
-    .partners__logo {
-        margin: 0;
-    }
-}

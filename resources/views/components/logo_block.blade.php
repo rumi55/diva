@@ -6,7 +6,7 @@
         @endforeach
         <div class="partners__offer">
             <span>Хотите работать с нами?</span>
-            <a href="">Узнать больше</a>
+            <a href="/o-nas">Узнать больше</a>
         </div>
     </div>
 @endforeach

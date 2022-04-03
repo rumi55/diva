@@ -17,13 +17,15 @@
 @endsection
 
 @section('content')
+    <main>
+        @include('components.photo_block')
+        @include('components.about_block')
+        @include('components.chart_block')
 
-    @include('components.photo_block')
-    {{-- @include('components.slider') --}}
-    @include('components.logo_block')
-    @include('components.services_main')
-    @include('components.map_block')
-
+        {{-- @include('components.logo_block') --}}
+        @include('components.services_main')
+        @include('components.map_block')
+    </main>
 
 
     {{-- <script>

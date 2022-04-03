@@ -1,5 +1,4 @@
 .map__section {
-    margin: 3rem 6rem;
     position: relative;
 
 
@@ -57,7 +56,6 @@
 @media screen and (max-width:767px) {
     .map__section {
         display: grid;
-        margin: 1rem 1rem 2rem 1rem;
         grid-template-areas: 'map__content'
             'map__code';
 

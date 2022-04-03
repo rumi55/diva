@@ -45,8 +45,6 @@
         @include('components.breadcrumbs')
 
 
-
-
         @if ($categories->count())
             <div class="bg-gray-50">
                 <div class="mx-auto flex flex-wrap w-full">
@@ -98,8 +96,8 @@
                                     @if ($item->preview)
                                         <img loading="lazy"
                                             class=" flex-none object-cover object-center w-full lg:h-64 md:h-36 rounded-t-xl"
-                                            src="{{ ImageHelper::thumb('storage' . '/' . $item->preview) }}" alt="">
-                                            
+                                            src="{{ ImageHelper::thumb($item->preview, 'webp', 400, 200, '', 100) }}"
+                                            alt="">
                                     @endif
 
 

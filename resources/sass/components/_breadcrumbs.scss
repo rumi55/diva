@@ -21,7 +21,7 @@
 
         img {
             border-radius: 1rem;
-            max-height: 400px;
+            aspect-ratio: 4/1;
             object-fit: cover;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             position: relative;
@@ -34,17 +34,19 @@
             display: flex;
             gap: 0.5rem;
             bottom: 0;
-            right: 0;
-            padding: 1rem 1.5rem;
+            left: 0;
+            padding: 1rem 1.5rem 1.5rem 4rem;
             z-index: 3;
 
 
             li {
 
+
                 span {
                     color: white;
                     font-weight: 300;
                     font-size: 0.9rem;
+
                 }
 
                 &::after {
@@ -72,9 +74,10 @@
         left: 0;
         display: flex;
         color: white;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         z-index: 2;
+        padding: 4rem;
     }
 
     .breadcrumbs__desc {
@@ -91,10 +94,13 @@
 
         .breadcrumbs__image {
 
-            img {}
+            img {
+                aspect-ratio: 4/2;
+            }
 
             .breadcrumbs__list {
                 width: 100%;
+                padding: 1rem;
 
 
 

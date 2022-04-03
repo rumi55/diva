@@ -3,7 +3,14 @@
     @if ($post->background)
         <img src="storage/{{ $post->background }}" alt="">
     @else
-        <img src="{{ asset('img/1.jpg') }}" alt="">
+
+    <picture>
+        <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 1600, 400, '', 100) }}" type="image/webp">
+        <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 1600, 400, '', 100) }}" type="image/jpeg">
+        <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+      </picture>
+        {{-- <img src="{{ asset('img/1.jpg') }}" alt=""> --}}
+        {{-- <img src="{{ ImageHelper::thumb('storage' . '/' . '1.jpg', 'webp', 1600, 400, '', 100) }}" alt=""> --}}
     @endif
 
 
@@ -38,6 +45,7 @@
 
 @section('content')
     <main>
+     
         @include('components.breadcrumbs')
 
 

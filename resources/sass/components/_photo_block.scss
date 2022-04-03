@@ -1,5 +1,5 @@
 .photo__block {
-    margin: 0 6rem;
+ 
     position: relative;
 
 
@@ -101,14 +101,14 @@
 
 @media screen and (max-width:768px) {
     .photo__block {
-        margin: 0 1rem;
+ 
 
         .photo__img {
             height: calc(100vh - 150px);
         }
 
         .photo__content {
-            padding: 0 2rem;
+            padding: 0 1rem;
 
             .photo__items {
                 grid-template-columns: 1fr;
