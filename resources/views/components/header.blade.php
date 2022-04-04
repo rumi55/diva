@@ -6,7 +6,7 @@
 </div>
 <header id="header">
     <div class="logo">
-        <a href="/"><img src="{{ asset('img/logo.svg') }}" alt=""></a>
+        <a href="/" aria-label="Логотип ГК «Дива»"><img src="{{ asset('img/logo.svg') }}" alt=""></a>
     </div>
     <input type="checkbox" id="menuToggle">
     <label for="menuToggle" class="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
