@@ -729,7 +729,7 @@ header .logo {
 }
 header .logo a img {
   transition: all 0.05s ease-in-out;
-  max-height: 2.3rem;
+  max-height: 2rem;
   width: auto;
 }
 
@@ -1131,7 +1131,7 @@ header .logo a img {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: rgba(25, 69, 75, 0.28) 2px 4px 32px;
-  height: 600px;
+  aspect-ratio: 4/2;
 }
 .photo__block .photo__img::before {
   content: "";
@@ -1146,7 +1146,7 @@ header .logo a img {
 .photo__block .photo__img img {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 100%;
+  aspect-ratio: 4/2;
 }
 .photo__block .photo__content {
   position: absolute;
@@ -1154,72 +1154,22 @@ header .logo a img {
   right: 0;
   bottom: 0;
   left: 0;
-  color: white;
-  padding: 4rem;
   display: flex;
-  align-items: center;
-}
-.photo__block .photo__content .photo__items {
-  display: grid;
-  grid-template-areas: "p_logo p_heading" "p_logo p_desc";
-  grid-template-columns: 1fr 10fr;
-  gap: 0 2rem;
   justify-content: center;
   align-items: center;
 }
-.photo__block .photo__content .photo__items .photo__heading {
-  grid-area: p_heading;
-  font-weight: 700;
-  font-size: 3rem;
-  text-shadow: 0px 0px 10px #111827;
-}
-.photo__block .photo__content .photo__items .photo__heading h1 {
-  line-height: 1;
-}
-.photo__block .photo__content .photo__items .photo__desc {
-  grid-area: p_desc;
-  font-size: 1.3rem;
-  font-weight: 400;
-  text-shadow: 0px 0px 10px #111827;
-}
-.photo__block .photo__content .photo__items .photo__logo {
-  grid-area: p_logo;
-}
-.photo__block .photo__content .photo__items .photo__logo img {
-  padding: 1rem;
-  border-radius: 1rem;
-  background: white;
-  opacity: 0.8;
+.photo__block .photo__content .photo__logo svg {
+  max-height: 14rem;
+  fill: white;
   transition: 0.5s ease-in-out;
-  flex: none;
 }
 
 @media screen and (max-width: 768px) {
   .photo__block .photo__img {
-    height: calc(100vh - 150px);
+    aspect-ratio: 4/2;
   }
-  .photo__block .photo__content {
-    padding: 0 1rem;
-  }
-  .photo__block .photo__content .photo__items {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    grid-template-areas: "p_heading" "p_desc";
-  }
-  .photo__block .photo__content .photo__items .photo__logo {
-    display: none;
-  }
-  .photo__block .photo__content .photo__items .photo__logo img {
-    max-height: 10rem;
-    width: auto;
-  }
-  .photo__block .photo__content .photo__items .photo__heading h1 {
-    line-height: 3.5rem;
-    font-size: 3rem;
-  }
-  .photo__block .photo__content .photo__items .photo__desc {
-    font-size: 1.3rem;
-    font-weight: 300;
+  .photo__block .photo__content .photo__logo svg {
+    height: 8rem;
   }
 }
 .partners__logo {

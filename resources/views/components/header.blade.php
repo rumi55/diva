@@ -1,9 +1,9 @@
-<div class="topbar">
+{{-- <div class="topbar">
     <div class="address"><span>Адрес</span>{{ $site->address_crop }}</div>
     <div class="email"><span>Email</span><a href="mailto:{{ $site->email }}">{{ $site->email }}</a></div>
     <div class="phone"><a
             href="tel:{{ str_replace([' ', '(', ')', '-'], '', $site->phone) }}">{{ $site->phone }}</a></div>
-</div>
+</div> --}}
 <header id="header">
     <div class="logo">
         <a href="/" aria-label="Логотип ГК «Дива»"><img src="{{ asset('img/logo.svg') }}" alt=""></a>
@@ -18,11 +18,7 @@
             @foreach (\App\Models\Menu::where('type', '=', 'top')->get() as $item)
                 @foreach ($item->repeater as $menuitem)
                     <li @if ($menuitem['subrep']) class="master" @endif><a
-                            @if (Illuminate\Support\Str::endsWith(Illuminate\Support\Facades\URL::current(), $menuitem['menu_slug'] ?? url('/') )) 
-                         
-                          class="active" 
-                          @endif
-                       
+                            @if (Illuminate\Support\Str::endsWith(Illuminate\Support\Facades\URL::current(), $menuitem['menu_slug'] ?? url('/'))) class="active" @endif
                             href="/{{ $menuitem['menu_slug'] }}">{{ $menuitem['menu_title'] }}</a>
                         @if ($menuitem['subrep'])
                             <input type="checkbox" name="{{ Illuminate\Support\Str::slug($menuitem['menu_title']) }}"

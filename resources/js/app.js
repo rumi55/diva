@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (e = window.screen.availWidth) {
 
                 if (e > 767) {
-                    if (document.documentElement.scrollTop > 50) {
+                    if (document.documentElement.scrollTop > 1) {
                         document.getElementById("header").className = "onscroll";
                     } else {
                         document.getElementById("header").className = "";

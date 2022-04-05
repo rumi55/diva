@@ -4,10 +4,10 @@
         @foreach (array_reverse($item->gallery) as $logo)
             <img src="/storage/{{ $logo }}" alt="">
         @endforeach
-        <div class="partners__offer">
+        {{-- <div class="partners__offer">
             <span>Хотите работать с нами?</span>
             <a href="/o-nas">Узнать больше</a>
-        </div>
+        </div> --}}
     </div>
 @endforeach
 {{-- <div class="partners__logo">

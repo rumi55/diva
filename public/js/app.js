@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function scrollbar(e) {
     if (e = window.screen.availWidth) {
       if (e > 767) {
-        if (document.documentElement.scrollTop > 50) {
+        if (document.documentElement.scrollTop > 1) {
           document.getElementById("header").className = "onscroll";
         } else {
           document.getElementById("header").className = "";
