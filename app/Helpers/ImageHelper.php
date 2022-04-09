@@ -25,10 +25,14 @@ class ImageHelper
         $dir = pathinfo($source, PATHINFO_DIRNAME);
         $name = pathinfo($source, PATHINFO_FILENAME);
         $destination = $dir . '/' . $name . '-'. $width .'-'. $height . '.'. $type;
-        if (file_exists($destination)) {
-            return '/'.$destination;
-        }
-        else{
+        
+
+
+
+        // if (file_exists($destination)) {
+        //     return '/'.$destination;
+        // }
+        // else{
 
        
         $info = getimagesize($source);
@@ -131,4 +135,4 @@ class ImageHelper
 }
     
     
-}
+// }
