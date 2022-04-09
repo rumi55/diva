@@ -93,8 +93,38 @@ main {
     margin: 0 6rem 2rem 6rem;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $md) {
     main {
         margin: 0 1rem 1rem 1rem;
+    }
+}
+
+@media screen and (min-width: $md) and (max-width: $lg) {
+    main {
+        margin: 0 2rem 1rem 2rem;
+    }
+}
+
+@media screen and (min-width: $lg) and (max-width: $xl) {
+    main {
+        margin: 0 3rem 1rem 3rem;
+    }
+}
+
+
+.page__title {
+
+    text-align: center;
+
+    p {
+        font-size: 1.3rem;
+
+    }
+}
+@media screen and (max-width: $sm) {
+    .page__title {
+        h1{
+            font-size: 2.3rem;
+        }
     }
 }

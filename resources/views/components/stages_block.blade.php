@@ -1,7 +1,7 @@
-@foreach (\App\Models\Block::where('type', 'stages')->get() as $item)
+@foreach ($post->blocks->where('type', 'stages') as $item)
     <div class="stages__block">
         <div class="stages__heading">
-            {{ $item->title }}
+            <h2>{{ $item->title }}</h2>
         </div>
         <div class="stages__tab flex mx-auto flex-wrap w-full">
             @foreach ($item->repeater as $item_rep => $element)

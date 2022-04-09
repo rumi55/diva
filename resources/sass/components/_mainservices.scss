@@ -1,6 +1,7 @@
 .main__services {
 
     .heading {
+        text-align: center;
         font-size: 2.4rem;
         font-weight: 600;
         margin-bottom: 1.5rem;
@@ -33,18 +34,22 @@
                 z-index: 2;
                 transition: all 0.5s ease-out;
             }
-            &:hover::after{
-                background:transparent;
+
+            &:hover::after {
+                background: transparent;
             }
+
             &:hover img {
 
                 transform: scale(1.1);
 
             }
-            &:hover .card__name{
+
+            &:hover .card__name {
                 text-shadow: 0px 0px 10px #111827;
-                        
+
             }
+
             img {
                 position: absolute;
                 top: 0;
@@ -98,18 +103,15 @@
 
 @media screen and (max-width:500px) {
     .main__services {
-        .content__blocks{
+        .content__blocks {
             grid-template-columns: repeat(2, 1fr);
             grid-template-areas:
-            'serv1 serv1'
-            'serv2 serv2'
-            'serv3 serv3'
-            'serv4 serv4';
-            .service__card{
-              
+                'serv1 serv1'
+                'serv2 serv2'
+                'serv3 serv3'
+                'serv4 serv4';
 
-            }
         }
     }
-    
+
 }

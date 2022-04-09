@@ -1,5 +1,6 @@
 footer {
     background: white;
+
     .top__footer {
         display: grid;
         grid-template-columns: 2fr 2fr 2fr 2fr;
@@ -9,13 +10,14 @@ footer {
         div {
 
 
-            svg{
+            svg {
                 max-height: 11rem;
                 padding: 2rem;
                 background: $gray-100;
                 border-radius: 1rem;
                 width: auto;
             }
+
             // img {
             //     max-height: 3rem;
             //     width: auto;
@@ -54,16 +56,19 @@ footer {
 }
 
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: $md) {
     footer {
 
         .top__footer {
             padding: 2rem 1rem 1rem 1rem;
             display: grid;
-            grid-template-columns: 2fr 2fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-            div{
-                svg{
+
+            div {
+                svg {
                     max-height: 8rem;
                     padding: 1rem;
                 }
@@ -72,6 +77,42 @@ footer {
 
         .bottom__footer {
             padding: 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: $md) and (max-width: $lg) {
+    footer {
+
+        .top__footer {
+            padding: 2rem 2rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+
+            div {
+                svg {
+                    max-height: 8rem;
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .bottom__footer {
+            padding: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: $lg) and (max-width: $xl) {
+
+    footer {
+
+        .top__footer {
+            padding: 2rem 3rem;
+        }
+        .bottom__footer {
+            padding: 1rem 3rem;
         }
     }
 }

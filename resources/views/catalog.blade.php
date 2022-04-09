@@ -43,7 +43,7 @@
         <?php $post = $category; ?>
         @include('components.breadcrumbs')
         @include('components.text_block_1')
-        @include('components.production_block')
+        @include('components.productionmain_block')
         @include('components.text_block_2')
     </main>
 @endsection

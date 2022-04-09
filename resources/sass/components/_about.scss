@@ -1,6 +1,7 @@
 // About 3 logo START
 .about__block {
     .about__heading {
+        text-align: center;
         margin-bottom: 2rem;
     }
 
@@ -31,6 +32,7 @@
 
             .about__logo {
                 flex: none;
+                align-self: center;
 
                 img {
                     height: 3rem;
@@ -56,6 +58,14 @@
     }
 }
 
+@media screen and (min-width:$md) and (max-width:$lg) {
+    .about__block {
+        .about__list {
+            flex-direction: column;
+        }
+    }
+}
+
 // About 3 logo END
 
 
@@ -71,6 +81,10 @@
 
     .team__heading {
         margin-bottom: 2rem;
+        text-align: center;
+        p{
+            font-size: 1.3rem;
+        }
     }
 
     .team__list {
@@ -114,17 +128,19 @@
 
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: $md) {
     .team__block {
         margin: 0;
+
         .team__heading {
-         h2{
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-         }
-         p{
-             font-size: 1.3rem;
-         }
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
         }
 
 
@@ -151,6 +167,7 @@
     .exp__heading {
         font-size: 2rem;
         font-weight: 600;
+        text-align: center;
     }
 
     .exp__content {
@@ -163,7 +180,8 @@
             background: $gray-100;
             border: 3px solid $gray-100;
             transition: all 0.5s ease-in-out;
-            &:hover{
+
+            &:hover {
                 background: white;
             }
 
@@ -189,15 +207,17 @@
 
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:$xs) {
     .experience__block {
         .exp__content {
+
             grid-template-columns: 1fr;
         }
 
     }
 }
-@media screen and (min-width:481px) and (max-width:767px) {
+
+@media screen and (min-width:$xs) and (max-width:$md) {
     .experience__block {
         .exp__content {
             grid-template-columns: repeat(2, 1fr);
@@ -207,7 +227,15 @@
 }
 
 
-@media screen and (min-width:768px) and (max-width: 1023px) {
+@media screen and (min-width:$md) and (max-width: $lg) {
+    .experience__block {
+        .exp__content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+}
+@media screen and (min-width:$lg) and (max-width: $xxl) {
     .experience__block {
         .exp__content {
             grid-template-columns: repeat(3, 1fr);
@@ -216,5 +244,6 @@
     }
 }
 
-// Experience block END
 
+
+// Experience block END

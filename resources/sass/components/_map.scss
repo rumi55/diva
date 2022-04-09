@@ -53,7 +53,7 @@
     }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:$xs) {
     .map__section {
         display: grid;
         grid-template-areas: 'map__content'
@@ -130,13 +130,26 @@
 
 }
 
-@media screen and (max-width:767px) {
+
+@media screen and (max-width:$xl) {
     .mapprod__section {
         grid-template-columns: 1fr;
 
         .mapprod__content {
-            // padding: 0;
             margin: 2rem 0 0 0;
+        }
+    }
+}
+
+@media screen and (min-width:$xl) and (max-width:$xxl) {
+    .mapprod__section {
+        .mapprod__content {
+            margin: 0 0 0 2rem;
+        }
+        .mapprod__img{
+            img{
+                height: 100%;
+            }
         }
     }
 }

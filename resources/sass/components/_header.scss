@@ -134,7 +134,7 @@ header {
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $lg) {
     .topbar {
         display: none;
         // padding: 1rem;
@@ -185,7 +185,7 @@ header {
 
                     a {
                         width: 100%;
-                        padding: 1rem;
+                        padding: 1rem 0;
                     }
 
                     label {
@@ -235,7 +235,8 @@ header {
                     justify-content: space-between;
 
                     a {
-                        width: 90vw;
+                        width: 90%;
+
                     }
 
                     label {
@@ -308,13 +309,13 @@ header {
 
 
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:$lg) {
     header {
         .menu {
 
 
             ul {
-                display: flex;
+                // display: flex;
                 gap: 1rem;
 
                 li {
@@ -394,5 +395,46 @@ header {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: $md) {
+    header {
+       
+        nav.menu ul {
+            padding-right: 1rem;
+            padding-left: 1rem;
+
+        }
+    }
+}
+
+@media screen and (min-width: $md) and (max-width: $lg) {
+    header {
+        padding: 1rem 2rem;
+        nav.menu ul {
+            padding-right: 3rem;
+            padding-left: 3rem;
+
+        }
+    }
+}
+
+@media screen and (min-width: $lg) and (max-width: $xl) {
+    header {
+        padding-right: 3rem;
+        padding-left: 3rem;
+
+        // nav.menu ul {
+        //     padding-right: 3rem;
+        //     padding-left: 3rem;
+
+        // }
+    }
+}
+
+@media screen and (min-width: $xxl) {
+    header {
+        padding: 0 6rem;
     }
 }

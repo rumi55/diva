@@ -1,15 +1,20 @@
-@foreach (\App\Models\Block::where('type', 'about')->get() as $item)
+@foreach ($post->blocks->where('type', 'about') as $item)
     <div class="about__block">
-        <div class="about__heading">
-            <h2>{{ $item->title }}</h2>
-        </div>
+        @if ($item->name)
+            <div class="about__heading">
+                <h2>{{ $item->name }}</h2>
+            </div>
+        @endif
         <div class="about__list">
             @foreach ($item->repeater as $repeater)
                 <div class="about__item">
-                    <div class="about__logo"><img src="/storage/{{ $repeater['picture'] }}" alt=""></div>
+                    @if ($repeater['picture'])
+                        <div class="about__logo"><img src="/storage/{{ $repeater['picture'] }}" alt=""></div>
+                    @endif
+
 
                     <div class="about__text">
-                        {{ $repeater['description'] }}
+                        {!! $repeater['description'] !!}
                     </div>
                 </div>
             @endforeach

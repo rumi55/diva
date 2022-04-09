@@ -1,4 +1,4 @@
-@foreach (\App\Models\Block::where('type', 'factors')->get() as $item)
+@foreach ($post->blocks->where('type', 'factors') as $item)
 <div class="factors__block">
     <div class="factors__heading">
         <h2>{!! $item->title !!}</h2>

@@ -13,7 +13,13 @@
         <div class="gallery__images" id="anchor-tag">
             @foreach ($post->gallery as $item)
                 <a href="/storage/{{ $item }}">
-                    <img src="/storage/{{ $item }}" alt="">
+                    <picture>
+                        <source srcset="{{ ImageHelper::thumb($item, 'webp', 560, 315, '', 100) }}"
+                            media="(min-width: 768px)" type="image/webp">
+                        <source srcset="{{ ImageHelper::thumb($item, 'png', 560, 315, '', 9) }}"
+                            media="(max-width: 768px)" type="image/png">
+                        <img src="/storage/{{ $item }}" alt="хлебные крошки">
+                    </picture>
                 </a>
             @endforeach
         </div>

@@ -67,6 +67,11 @@ class BlockResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('title')
                                 ->required()
+                                ->label('Название')
+                                ->columnSpan([
+                                    'sm' => 2,
+                                ]),
+                                Forms\Components\TextInput::make('name')
                                 ->label('Заголовок')
                                 ->columnSpan([
                                     'sm' => 2,
@@ -155,6 +160,7 @@ class BlockResource extends Resource
                                 'team_full' => 'Сотрудники (все)',
                                 // 'team_short' => 'Сотрудники (избранное)',
                                 'products' => 'Ассортимент',
+                                'files' => 'Файлы',
                             ])
                             ->columnSpan([
                                 'sm' => 2,

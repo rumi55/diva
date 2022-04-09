@@ -1,3 +1,13 @@
 <?php
 
-return [];
+return [
+    'modal' => [
+        'buttons'=> [
+            
+            'cancel' =>[
+                'label' => 'Отменить'
+            ]
+        ]
+
+    ]
+];

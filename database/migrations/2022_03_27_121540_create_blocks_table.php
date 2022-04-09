@@ -21,7 +21,7 @@ return new class extends Migration
             $table->json('gallery')->nullable();
             $table->longText('content')->nullable();
             $table->longText('content2')->nullable();
-            $table->enum('type', ['about','logo','factors','experience', 'production', 'map_production', 'map', 'strategy', 'stages', 'team_full', 'team_short', 'products']);
+            $table->enum('type', ['about','logo','factors','experience', 'production', 'map_production', 'map', 'strategy', 'stages', 'team_full', 'team_short', 'products', 'files']);
             $table->json('repeater')->nullable();
             $table->timestamps();
         });

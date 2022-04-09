@@ -15,10 +15,18 @@
         {{ $post->description }}
     @endif
 @endsection
+@section('description')
+    {!! $post->description !!}
+@endsection
+@section('name')
+    {{ $post->title }}
+@endsection
+
 
 @section('content')
     <main>
         @include('components.photo_block')
+        @include('components.pagetitle')
         @include('components.about_block')
         @include('components.chart_block')
 

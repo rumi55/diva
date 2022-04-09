@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Shopcategory;
 use App\Models\Team;
 
+
 class PostsController extends Controller
 {
  
@@ -93,6 +94,9 @@ class PostsController extends Controller
            
             $post = Post::where('slug', $slug)->firstOrFail();
             $teams = Team::orderBy('position_second')->get();
+            $block = Block::all();
+            $blocks = $post->blocks;
+        
 
             $breadcrumbs = [];
             $breadcrumbs[] = $this->getBreadcrumbsElement($post);
@@ -104,8 +108,7 @@ class PostsController extends Controller
         $breadcrumbs[0]['link'] = '';
 
 
-            return view('post', compact('post', 'breadcrumbs'))
-            ->with('blocks', Block::find(1))
+            return view('post', compact('post', 'breadcrumbs', 'blocks'))
             ;
 
             }
@@ -200,7 +203,9 @@ class PostsController extends Controller
     }
 
     public function mainpage(){
-        $post = Post::where('id','=',1)->select(['title','seo_title','seo_description','preview', 'content', 'content2'])->first();
-        return view('homepage', compact('post'));
+        $post = Post::where('id','=',1)->first();
+        $block = Block::all();
+        $blocks = $post->blocks;
+        return view('homepage', compact('post', 'blocks'));
     }
 }

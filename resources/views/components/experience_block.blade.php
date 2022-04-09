@@ -1,4 +1,4 @@
-@foreach (\App\Models\Block::where('type', 'experience')->get() as $item)
+@foreach ($post->blocks->where('type', 'experience') as $item)
     <div class="experience__block">
         <div class="exp__heading">
             {{ $item->title }}

@@ -1,4 +1,4 @@
-@foreach (\App\Models\Block::where('type', 'logo')->get() as $item)
+@foreach ($post->blocks->where('type', 'logo') as $item)
     <div class="partners__logo">
 
         @foreach (array_reverse($item->gallery) as $logo)

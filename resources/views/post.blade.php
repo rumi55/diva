@@ -1,19 +1,41 @@
 @extends('layouts.main')
 @section('background')
     @if ($post->background)
-        <img src="storage/{{ $post->background }}" alt="">
-    @else
+        {{-- <img src="storage/{{ $post->background }}" alt=""> --}}
 
-    <picture>
-        <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 1600, 400, '', 100) }}" type="image/webp">
-        <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 1600, 400, '', 100) }}" type="image/jpeg">
-        <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
-      </picture>
+        <picture>
+            <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 1600, 400, '', 100) }}"
+                media="(min-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 800, 400, '', 100) }}"
+                media="(max-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 400, 200, '', 100) }}"
+                media="(max-width: 500px)" type="image/webp">
+
+            <source srcset="{{ ImageHelper::thumb($post->background, 'jpg', 1600, 400, '', 100) }}"
+                media="(min-width: 768px)" type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'jpg', 400, 200, '', 100) }}"
+                media="(max-width: 768px)" type="image/jpeg">
+            <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+        </picture>
+    @else
+        <picture>
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 1600, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 800, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 400, 200, '', 100) }}" media="(max-width: 500px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 1600, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 800, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 400, 200, '', 100) }}" media="(max-width: 500px)"
+                type="image/jpeg">
+            <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+        </picture>
         {{-- <img src="{{ asset('img/1.jpg') }}" alt=""> --}}
         {{-- <img src="{{ ImageHelper::thumb('storage' . '/' . '1.jpg', 'webp', 1600, 400, '', 100) }}" alt=""> --}}
     @endif
-
-
 @endsection
 
 @section('name')
@@ -45,8 +67,9 @@
 
 @section('content')
     <main>
-     
+
         @include('components.breadcrumbs')
+
 
 
         @forelse ($post->blocks->where('type', 'products') as $item)
@@ -54,12 +77,17 @@
         @empty
         @endforelse
 
+
         @forelse ($post->blocks->where('type', 'about') as $item)
             @include('components.about_block')
         @empty
         @endforelse
+        @if ($post->type == 'contacts')
+            @include('components.company_cards')
+        @else
+            @include('components.text_block_1')
+        @endif
 
-        @include('components.text_block_1')
 
 
         @forelse ($post->blocks->where('type', 'team_full') as $item)
@@ -88,7 +116,7 @@
         @endforelse
 
 
-        
+
 
         @forelse ($post->blocks->where('type', 'logo') as $item)
             @include('components.logo_block')

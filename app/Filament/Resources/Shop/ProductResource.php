@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
 use Livewire\Component;
 use Filament\Forms\Components\Tabs;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+use Filament\Forms\Components\Toggle;
 
 class ProductResource extends Resource
 {
@@ -191,13 +192,20 @@ class ProductResource extends Resource
                                 ->relationship('category', 'title')
                                 ->required()
                                 ->columnSpan([
-                                    'sm' => 3,
+                                    'sm' => 4,
+                                ]),
+                                Toggle::make('featured')
+                                ->inline(false)
+                                ->label('Выращиваем')
+                                ->columnSpan([
+                                    'sm' => 2,
                                 ]),
                                 Forms\Components\TextInput::make('position')
                                 ->label('Позиция')
                                 ->columnSpan([
-                                    'sm' => 1,
+                                    'sm' => 2,
                                 ]),
+                               
                                 Forms\Components\FileUpload::make('preview')
                                 ->label('Основное фото')
                                 ->placeholder('<span class="filepond--label-action">Выбрать фото</span>')

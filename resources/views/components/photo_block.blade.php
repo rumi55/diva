@@ -1,6 +1,22 @@
 <div class="photo__block">
     <div class="photo__img">
-        <img src="{{ asset('img/diva_main_photo.jpg') }}" alt="">
+        {{-- <img src="{{ asset('img/diva_main_photo.jpg') }}" alt=""> --}}
+        <picture>
+            <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 1600, 800, '', 100) }}"
+                media="(min-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 800, 400, '', 100) }}"
+                media="(max-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 400, 200, '', 100) }}"
+                media="(max-width: 500px)" type="image/webp">
+
+            <source srcset="{{ ImageHelper::thumb($post->background, 'jpg', 1600, 800, '', 100) }}"
+                media="(min-width: 768px)" type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'jpg', 800, 400, '', 100) }}"
+                media="(max-width: 768px)" type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb($post->background, 'jpg', 400, 200, '', 100) }}"
+                media="(max-width: 500px)" type="image/jpeg">
+            <img src="storage/{{ $post->background }}" alt="хлебные крошки">
+        </picture>
     </div>
     <div class="photo__content">
 
