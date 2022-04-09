@@ -1,6 +1,6 @@
 <div class="photo__block">
     <div class="photo__img">
-        {{-- <img src="{{ asset('img/diva_main_photo.jpg') }}" alt=""> --}}
+        @if($post->background)
         <picture>
             <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 1600, 800, '', 100) }}"
                 media="(min-width: 768px)" type="image/webp">
@@ -17,6 +17,7 @@
                 media="(max-width: 500px)" type="image/jpeg">
             <img src="storage/{{ $post->background }}" alt="хлебные крошки">
         </picture>
+        @endif
     </div>
     <div class="photo__content">
 

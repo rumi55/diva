@@ -29,10 +29,10 @@ class ImageHelper
 
 
 
-        // if (file_exists($destination)) {
-        //     return '/'.$destination;
-        // }
-        // else{
+        if (file_exists($destination)) {
+            return '/'.$destination;
+        }
+        else{
 
        
         $info = getimagesize($source);
@@ -135,4 +135,4 @@ class ImageHelper
 }
     
     
-// }
+}
