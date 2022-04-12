@@ -17,6 +17,13 @@
                 Бор, Останскинский с/с.</p>
             <p><span>Участок принадлежит на правах частной собственности учредителю и руководителю ГК «ДИВА» Варежкину
                     Д.Ю.</p>
+
+
         </div>
+        @foreach (\App\Models\Block::where('type', 'map_production')->get() as $item)
+            <div class="mapprod__link">
+                <a href="{{ $item->name }}" target="_blank">Посмотреть (Росреестр)</a>
+            </div>
+        @endforeach
     </div>
 </div>
