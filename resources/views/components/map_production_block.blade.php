@@ -1,7 +1,13 @@
 <div class="mapprod__section">
     <div class="mapprod__img">
-
-        <img src="{{ asset('img/map.jpg') }}" alt="">
+        <picture>
+            <source srcset="{{ ImageHelper::thumb('map.jpg', 'webp', 1600, 800, '', 50) }}"
+                 type="image/webp">
+            
+                <source srcset="{{ ImageHelper::thumb('map.jpg', 'jpg', 1600, 800, '', 60) }}"
+                 type="image/jpeg">
+            <img src="{{ asset('img/map.jpg') }}" alt="Участок ГК Дива">
+        </picture>
         <div class="heading">
             <p class="h2">ООО «РОДИНА»</p>
             <p>Площадь: 799 998 м<sup>2</sup></p>
