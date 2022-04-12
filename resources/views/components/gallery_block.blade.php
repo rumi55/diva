@@ -11,7 +11,7 @@
         @endif
 
         <div class="gallery__images" id="anchor-tag">
-            @foreach ($post->gallery as $item)
+            @foreach (array_reverse($post->gallery) as $item)
                 <a href="/storage/{{ $item }}">
                     <picture>
                         <source srcset="{{ ImageHelper::thumb($item, 'webp', 560, 315, '', 100) }}"
