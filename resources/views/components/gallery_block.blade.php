@@ -1,4 +1,4 @@
-{{-- @foreach (\App\Models\Block::where('type', 'gallery')->get() as $item) --}}
+
 @if ($post->gallery)
     <div class="gallery__block">
 
@@ -14,15 +14,17 @@
             @foreach (array_reverse($post->gallery) as $item)
                 <a href="/storage/{{ $item }}">
                     <picture>
-                        <source srcset="{{ ImageHelper::thumb($item, 'webp', 560, 315, '', 100) }}"
-                            media="(min-width: 768px)" type="image/webp">
-                        <source srcset="{{ ImageHelper::thumb($item, 'png', 560, 315, '', 9) }}"
-                            media="(max-width: 768px)" type="image/png">
-                        <img src="/storage/{{ $item }}" alt="хлебные крошки">
+                        <source srcset="{{ ImageHelper::thumb($item, 'webp', 560, 315, '', 50) }}"
+                             type="image/webp">
+                        <source srcset="{{ ImageHelper::thumb($item, 'png', 560, 315, '', 7) }}"
+                             type="image/png">
+                            <source srcset="{{ ImageHelper::thumb($item, 'jpg', 560, 315, '', 60) }}"
+                             type="image/jpeg">
+                        <img src="/storage/{{ $item }}" alt="Фотографии ГК Дива">
                     </picture>
                 </a>
             @endforeach
         </div>
     </div>
 @endif
-{{-- @endforeach --}}
+
