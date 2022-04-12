@@ -36,6 +36,7 @@
                 img {
                     transition: all 1s ease-in-out;
                     aspect-ratio: 16/9;
+                    object-fit: cover;
 
                 }
             }
@@ -96,6 +97,7 @@
         .services__list {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+
             .services__item {
                 background: $gray-100;
             }
