@@ -210,9 +210,10 @@ header {
 
                         }
 
-                        &:checked~label svg {
+                        &:checked~ label svg {
                             transform: rotate(0deg);
                             stroke: green;
+                            
                         }
 
                     }
@@ -289,6 +290,9 @@ header {
         margin-top: 63px;
         border-top: 2px solid $gray-100;
 
+    }
+    #menuToggle:checked~label>svg{
+        stroke: green;
     }
 
     .menu-icon i {
@@ -413,8 +417,8 @@ header {
     header {
         padding: 1rem 2rem;
         nav.menu ul {
-            padding-right: 3rem;
-            padding-left: 3rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
 
         }
     }

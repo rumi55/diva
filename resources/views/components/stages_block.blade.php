@@ -3,7 +3,7 @@
         <div class="stages__heading">
             <h2>{{ $item->title }}</h2>
         </div>
-        <div class="stages__tab flex mx-auto flex-wrap w-full">
+        <div class="stages__tab">
             @foreach ($item->repeater as $item_rep => $element)
                 <input type="radio" class="input__tab" name="tabs"
                     id="{{ Illuminate\Support\Str::slug($element['title']) }}" hidden="" aria-hidden="true"
@@ -11,8 +11,13 @@
             @endforeach
             <ul>
                 @foreach ($item->repeater as $item_label)
-                    <li><label
-                            for="{{ Illuminate\Support\Str::slug($item_label['title']) }}">{{ $item_label['title'] }}</label>
+                    <li>
+                        {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                          </svg> --}}
+                        <img src="/storage/{{ $item_label['picture'] }}" alt="">
+                        <p>{{ $item_label['title'] }}</p>
+                        <label for="{{ Illuminate\Support\Str::slug($item_label['title']) }}"></label>
                     </li>
                 @endforeach
             </ul>

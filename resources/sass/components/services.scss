@@ -1,0 +1,104 @@
+.services__section {
+    .services__list {
+        display: grid;
+        gap: 1rem;
+
+        .services__item {
+
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 1s ease-in-out;
+            border: 2px solid $gray-100;
+
+            &:hover {
+                background: white;
+
+            }
+
+            &:hover .services__img img {
+                transform: scale(1.1);
+            }
+
+            .services__img {
+                position: relative;
+                overflow: hidden;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(51, 51, 51, 0.3);
+                }
+
+                img {
+                    transition: all 1s ease-in-out;
+                    aspect-ratio: 16/9;
+
+                }
+            }
+
+            .service__title {
+                margin: 1.5rem 1rem;
+                font-size: 1.3rem;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .service__button {
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    padding: 1rem;
+                    margin: 1.5rem 1rem;
+                    background: $gray-200;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        background: green;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$sm) {
+    .services__section {
+        .services__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media screen and (min-width:$sm) and (max-width:$lg) {
+    .services__section {
+        .services__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width:$lg) and (max-width:$xxl) {
+    .services__section {
+        .services__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width:$xxl) {
+    .services__section {
+        .services__list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            .services__item {
+                background: $gray-100;
+            }
+        }
+    }
+}

@@ -33,97 +33,57 @@
 
 @section('background')
     @if ($category->background)
-        <img src="storage/{{ $post->background }}" alt="">
+        <picture>
+            <source srcset="{{ ImageHelper::thumb($category->background, 'webp', 1600, 400, '', 100) }}"
+                media="(min-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($category->background, 'webp', 800, 400, '', 100) }}"
+                media="(max-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($category->background, 'webp', 400, 200, '', 100) }}"
+                media="(max-width: 500px)" type="image/webp">
+
+            <source srcset="{{ ImageHelper::thumb($category->background, 'jpg', 1600, 400, '', 100) }}"
+                media="(min-width: 768px)" type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb($category->background, 'jpg', 400, 200, '', 100) }}"
+                media="(max-width: 768px)" type="image/jpeg">
+            <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+        </picture>
     @else
-        <img src="{{ asset('img/1.jpg') }}" alt="">
+        <picture>
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 1600, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 800, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 400, 200, '', 100) }}" media="(max-width: 500px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 1600, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 800, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 400, 200, '', 100) }}" media="(max-width: 500px)"
+                type="image/jpeg">
+            <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+        </picture>
     @endif
 @endsection
 
 
 @section('content')
     <main>
+        <?php $post = $category; ?>
         @include('components.breadcrumbs')
 
 
-        @if ($categories->count())
-            <div class="bg-gray-50">
-                <div class="mx-auto flex flex-wrap w-full">
-                    <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-8 w-full">
-                        @foreach ($categories as $category)
-                            <div
-                                class="flex flex-col shadow-xl rounded-xl h-full bg-white hover:scale-105 transition ease-in-out delay-150 justify-between">
-                                <a href="/{{ $category->slug }}">
-                                    @if ($category->preview)
-                                        <img loading="lazy"
-                                            class=" flex-none object-cover object-center w-full lg:h-64 md:h-36 rounded-t-xl"
-                                            src="/storage/{{ $category->preview }}" alt="">
-                                    @endif
-                                    <div class="py-4 px-3 text-left">
-                                        <p class="product__card__title m-0">{{ $category->title }}</p>
-                                    </div>
-                                    <div class="px-4 py-4 bg-green-section border rounded-b-xl">
-                                        <a href="/{{ $category->slug }}"
-                                            class="inline-flex items-center mt-auto font-semibold lg:mb-0 hover:text-green-700 w-full"
-                                            title="{{ $category->title }}">
-                                            Подробнее</a>
-
-                                    </div>
-                                </a>
-                            </div>
-
-                            @foreach ($category->childrenCategories as $childCategory)
-                                @include('child_category', ['child_category' => $childCategory])
-                            @endforeach
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        @endif
 
 
+     @include('components.parent_services')
+     
+     
+     @include('components.text_block_1')
+     
+     @include('components.children_services')
 
-
-
-        @if ($posts->count())
-            <div class="bg-gray-50">
-                <div class="mx-auto flex flex-wrap w-full">
-                    <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-8 w-full">
-                        @foreach ($posts as $item)
-                            <div
-                                class="flex flex-col shadow-xl rounded-xl h-full bg-white hover:scale-105 transition ease-in-out delay-150 justify-between">
-                                <a href="/{{ $item->category->slug }}/{{ $item->slug }}">
-
-                                    @if ($item->preview)
-                                        <img loading="lazy"
-                                            class=" flex-none object-cover object-center w-full lg:h-64 md:h-36 rounded-t-xl"
-                                            src="{{ ImageHelper::thumb($item->preview, 'webp', 400, 200, '', 100) }}"
-                                            alt="">
-                                    @endif
-
-
-
-                                    <div class="py-4 px-3 text-left">
-                                        <p class="product__card__title m-0">{{ $item->title }}</p>
-                                    </div>
-                                </a>
-                                <div class="px-4 py-4 bg-green-section border rounded-b-xl flex flex-between">
-                                    <a href="/{{ $item->category->slug }}/{{ $item->slug }}"
-                                        class="inline-flex items-center mt-auto font-semibold lg:mb-0 hover:text-green-700 w-full"
-                                        title="{{ $item->title }}">
-                                        Подробнее</a>
-
-                                </div>
-                            </div>
-                        @endforeach
-                        @if ($posts->links())
-                            {{ $posts->links() }}
-                        @endif
-
-                    </div>
-                </div>
-            </div>
-        @endif
-
+        
+        @include('components.text_block_2')
 
 
     </main>

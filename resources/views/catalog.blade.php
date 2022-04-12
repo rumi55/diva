@@ -4,9 +4,37 @@
 
 @section('background')
     @if ($category->background)
-        <img src="storage/{{ $category->background }}" alt="">
+
+        <picture>
+            <source srcset="{{ ImageHelper::thumb($category->background, 'webp', 1600, 400, '', 100) }}"
+                media="(min-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($category->background, 'webp', 800, 400, '', 100) }}"
+                media="(max-width: 768px)" type="image/webp">
+            <source srcset="{{ ImageHelper::thumb($category->background, 'webp', 400, 200, '', 100) }}"
+                media="(max-width: 500px)" type="image/webp">
+
+            <source srcset="{{ ImageHelper::thumb($category->background, 'jpg', 1600, 400, '', 100) }}"
+                media="(min-width: 768px)" type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb($category->background, 'jpg', 400, 200, '', 100) }}"
+                media="(max-width: 768px)" type="image/jpeg">
+            <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+        </picture>
     @else
-        <img src="{{ asset('img/1.jpg') }}" alt="">
+        <picture>
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 1600, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 800, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 400, 200, '', 100) }}" media="(max-width: 500px)"
+                type="image/webp">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 1600, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 800, 400, '', 100) }}" media="(min-width: 768px)"
+                type="image/jpeg">
+            <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 400, 200, '', 100) }}" media="(max-width: 500px)"
+                type="image/jpeg">
+            <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
+        </picture>
     @endif
 @endsection
 

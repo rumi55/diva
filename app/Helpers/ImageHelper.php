@@ -7,24 +7,15 @@ use GdImage;
 class ImageHelper
 {
   
-    // private static function getImagePath($filename)
-    // {
-    //     $destination = $dir . '/' . $name . '-'. $width .'-'. $height . '.'. $type;
-    //     $path = public_path(static::$imagePath . $filename);
-    //     if (file_exists($path)) {
-    //         return $path;
-    //     }
-    //     return false;
-    // }
 
 
 
-    public static function thumb($source, $type='webp', $width=200, $height=100, $removeOld = true, $quality = 100)
+    public static function thumb($source, $type='webp', $width=200, $height=100, $removeOld = true, $quality)
     {
         $source = 'storage' . '/' . $source;
         $dir = pathinfo($source, PATHINFO_DIRNAME);
         $name = pathinfo($source, PATHINFO_FILENAME);
-        $destination = $dir . '/' . $name . '-'. $width .'-'. $height . '.'. $type;
+        $destination = $dir . '/' . $name . '-'. $width .'-'. $height . '-' . $quality .  '.'. $type;
         
 
 

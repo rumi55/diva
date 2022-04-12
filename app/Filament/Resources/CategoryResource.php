@@ -118,6 +118,12 @@ class CategoryResource extends Resource
                         ->placeholder('<span class="filepond--label-action">Выбрать фото</span>')->columnSpan([
                             'sm' => 3,
                         ]),
+                        Forms\Components\FileUpload::make('background')
+                        ->label('Фон')
+                        ->disk('public')
+                        ->placeholder('<span class="filepond--label-action">Выбрать фото</span>')->columnSpan([
+                            'sm' => 3,
+                        ]),
                         
 
                         
