@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('background')
     @if ($post->background)
-
         <picture>
             <source srcset="{{ ImageHelper::thumb($post->background, 'webp', 1600, 400, '', 100) }}"
                 media="(min-width: 768px)" type="image/webp">

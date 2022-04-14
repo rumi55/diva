@@ -32,7 +32,16 @@
 
         {{-- @include('components.logo_block') --}}
         @include('components.services_main')
+        @include('components.text_block_1')
+       
+        @forelse ($post->blocks->where('type', 'factors') as $item)
+            @include('components.factors_block')
+        @empty
+        @endforelse
+        @include('components.gallery_block')
+        @include('components.text_block_2')
         @include('components.map_block')
+        @include('components.text_block_3')
     </main>
 
 

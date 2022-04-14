@@ -1,26 +1,24 @@
 @foreach ($post->blocks->where('type', 'factors') as $item)
-<div class="factors__block">
-    <div class="factors__heading">
-        <h2>{!! $item->title !!}</h2>
-        {!! $item->content !!}
-    </div>
-    <div class="factors__list">
-        @foreach ($item->repeater as $item=>$element)
-        <div class="factors__item">
-           
-            <div class="factors__number">{{ $element['number'] }}</div>
-            <div class="factors__content">
-                <div class="factors__name">{{ $element['title'] }}</div>
-                <div class="factors__desc">
-                    <p>{!! $element['description'] !!}
-                    </p>
-                </div>
-            </div>
+    <div class="factors__block">
+        <div class="factors__heading">
+            <h2>{!! $item->title !!}</h2>
+            {!! $item->content !!}
         </div>
-            
-        @endforeach
+        <div class="factors__list">
+            @foreach ($item->repeater as $item => $element)
+                <div class="factors__item">
+
+                    <div class="factors__number">{{ $element['number'] }}</div>
+                    <div class="factors__content">
+                        <div class="factors__name">{{ $element['title'] }}</div>
+                        <div class="factors__desc">
+                            {!! $element['description'] !!}
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-</div>
 @endforeach
 {{-- <div class="factors__block">
     <div class="factors__heading">
@@ -94,4 +92,3 @@
 
     </div>
 </div> --}}
-

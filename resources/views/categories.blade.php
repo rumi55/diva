@@ -75,17 +75,16 @@
 
 
 
-     @include('components.parent_services')
-     
-     
-     @include('components.text_block_1')
-     
-     @include('components.children_services')
+        @include('components.parent_services')
 
-        
+
+        @include('components.text_block_1')
+
+        @include('components.children_services')
+
+
         @include('components.text_block_2')
 
 
     </main>
-
 @endsection

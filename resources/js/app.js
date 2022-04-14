@@ -3,7 +3,7 @@ window.addEventListener('load', (e) => {
 
 
     function preload(e) {
-        if(e) {
+        if (e) {
             document.body.classList.remove('preload');
         }
     }
@@ -74,6 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //Lightgallery
-require('./lightgallery')
+    require('./lightgallery')
 require('./lg-utils')
 lightGallery(document.getElementById('anchor-tag'));
+lightGallery(document.querySelector("div.attachment-gallery"), {
+    selector: 'a',
+});

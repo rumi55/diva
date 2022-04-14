@@ -12,7 +12,7 @@
                     <picture>
                         <source srcset="{{ ImageHelper::thumb($item->preview, 'webp', 207, 276, '', 80) }}"
                             media="(max-width: 500px)" type="image/webp">
-        
+
                         <source srcset="{{ ImageHelper::thumb($item->preview, 'jpg', 207, 276, '', 80) }}"
                             media="(max-width: 500px)" type="image/jpeg">
                         <img src="storage/{{ $item->preview }}" alt="хлебные крошки">

@@ -5,21 +5,25 @@
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 <a href="/" title="Главная" itemprop="item">
                     <span itemprop="name">Главная</span>
-                    <meta itemprop="position" content="0">
+                    <meta itemprop="position" content="1">
                 </a>
             </li>
             <?php $b = 2; ?>
             @foreach ($breadcrumbs = array_reverse($breadcrumbs) as $breadcrumb)
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  
                     @if ($breadcrumb['link'] == '')
-                        <span itemprop="name">{{ $breadcrumb['title'] }}</span>
-                        <meta itemprop="position" content="{{ $b++ }}">
+                    <li>
+                        <span>{{ $breadcrumb['title'] }}</span>
+                        {{-- <meta itemprop="position" content="{{ $b++ }}"> --}}
+                    </li>
                     @else
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <a href="/{{ $breadcrumb['link'] }}" title="{{ $breadcrumb['title'] }}">
                             <span itemprop="name">{{ $breadcrumb['title'] }}</span></a>
                         <meta itemprop="position" content="{{ $b++ }}">
+                    </li>
                     @endif
-                </li>
+               
             @endforeach
         </ul>
         <div class="page__title">

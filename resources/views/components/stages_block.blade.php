@@ -6,7 +6,7 @@
         <div class="stages__tab">
             @foreach ($item->repeater as $item_rep => $element)
                 <input type="radio" class="input__tab" name="tabs"
-                    id="{{ Illuminate\Support\Str::slug($element['title']) }}" hidden="" aria-hidden="true"
+                    id="{{ Illuminate\Support\Str::slug($element['title']) }}" hidden="" 
                     @if ($item_rep === 0) checked @endif>
             @endforeach
             <ul>

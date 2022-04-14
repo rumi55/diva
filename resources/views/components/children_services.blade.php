@@ -20,12 +20,12 @@
                         @else
                             <div class="services__img">
                                 <picture>
-                                    <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 480, 270, '', 60) }}" 
+                                    <source srcset="{{ ImageHelper::thumb('1.jpg', 'webp', 480, 270, '', 60) }}"
                                         type="image/webp">
-                                  
-                                    <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 480, 270, '', 60) }}" 
+
+                                    <source srcset="{{ ImageHelper::thumb('1.jpg', 'jpg', 480, 270, '', 60) }}"
                                         type="image/jpeg">
-                                  
+
                                     <img src="{{ asset('img/1.jpg') }}" alt="хлебные крошки">
                                 </picture>
                             </div>
@@ -46,5 +46,5 @@
 
         </div>
     </div>
-    </div>
+   
 @endif
