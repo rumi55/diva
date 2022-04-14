@@ -18,7 +18,7 @@
                     </li>
                     @else
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a href="/{{ $breadcrumb['link'] }}" title="{{ $breadcrumb['title'] }}">
+                        <a href="/{{ $breadcrumb['link'] }}" title="{{ $breadcrumb['title'] }}" itemprop="item">
                             <span itemprop="name">{{ $breadcrumb['title'] }}</span></a>
                         <meta itemprop="position" content="{{ $b++ }}">
                     </li>
