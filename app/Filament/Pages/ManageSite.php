@@ -21,9 +21,7 @@ class ManageSite extends SettingsPage
     protected function getFormSchema(): array
     {
         return [
-            // TextInput::make('name')
-            // ->label('Copyright notice')
-            // ,
+           
             TextInput::make('email')
             ->label('Email')
             ,

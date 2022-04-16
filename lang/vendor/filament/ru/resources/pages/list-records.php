@@ -7,7 +7,7 @@ return [
     'actions' => [
 
         'create' => [
-            'label' => 'Новый :label',
+            'label' => 'Создать',
         ],
 
     ],

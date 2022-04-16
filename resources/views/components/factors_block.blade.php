@@ -1,9 +1,12 @@
 @foreach ($post->blocks->where('type', 'factors') as $item)
     <div class="factors__block">
-        <div class="factors__heading">
-            <h2>{!! $item->title !!}</h2>
-            {!! $item->content !!}
-        </div>
+        @if ($item->name)
+            <div class="factors__heading">
+                <h2>{!! $item->name !!}</h2>
+                {!! $item->content !!}
+            </div>
+        @endif
+
         <div class="factors__list">
             @foreach ($item->repeater as $item => $element)
                 <div class="factors__item">

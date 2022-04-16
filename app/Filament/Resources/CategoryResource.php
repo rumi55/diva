@@ -24,11 +24,12 @@ class CategoryResource extends Resource
     protected static ?string $model = Category::class;
 
 
-    protected static ?string $label = 'Категории ';
+    protected static ?string $label = 'Категория ';
 
     protected static ?string $recordTitleAttribute = 'title';
     
     protected static ?string $navigationGroup = 'Услуги';
+    
     
    
 

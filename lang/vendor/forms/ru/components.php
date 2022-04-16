@@ -7,7 +7,7 @@ return [
         'buttons' => [
 
             'create_item' => [
-                'label' => 'Добавить к :label',
+                'label' => 'Добавить',
             ],
 
             'create_item_between' => [
@@ -86,7 +86,7 @@ return [
         'buttons' => [
 
             'create_item' => [
-                'label' => 'Добавить к :label',
+                'label' => 'Добавить',
             ],
 
             'delete_item' => [

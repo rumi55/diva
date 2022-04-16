@@ -42,12 +42,13 @@
         }
     
 }
-@media screen and (max-width:767px) {
+@media screen and (max-width:$md) {
 
   .partners__logo{
-    margin: 2rem 1rem;
     img{
-        width: 40vw;
+        max-width: 40vw;
+        max-height: 48px;
+        width: auto;
         height: auto;
     }
     .partners__offer{
