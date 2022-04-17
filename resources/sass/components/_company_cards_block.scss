@@ -38,6 +38,7 @@
                         padding: 1rem 2rem;
                         background: $gray-200;
                         transition: all 0.2s ease-in-out;
+                        text-align: center;
 
                         &:hover {
                             background: green;
@@ -131,6 +132,33 @@
                         a {
                             font-size: 1rem;
                             padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:$lg) and (max-width:$xl) {
+    .company__cards__block {
+
+
+        .company__cards__list {
+            grid-template-columns: 4fr 3fr;
+
+            .company__cards__item {
+                &.company__phones {}
+
+                &.company__address {
+
+                    .company__pdf {
+
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        a {
+                            text-align: center;
+                            font-size: 1.3rem;
                         }
                     }
                 }

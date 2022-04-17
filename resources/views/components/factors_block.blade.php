@@ -12,8 +12,11 @@
                 <div class="factors__item">
 
                     <div class="factors__number">{{ $element['number'] }}</div>
+                    
                     <div class="factors__content">
+                       
                         <div class="factors__name">{{ $element['title'] }}</div>
+                        
                         <div class="factors__desc">
                             {!! $element['description'] !!}
                         </div>
