@@ -1,8 +1,16 @@
 <div class="team__block">
     <div class="team__heading">
-        <h2>ГК «ДИВА» - КОМАНДА ПРОФЕССИОНАЛОВ</h2>
-        <p>Образованная в 2022 году ГК «ДИВА» объединила многолетний опыт профессионалов своего дела.
-        </p>
+        @if ($item->name)
+        <h2>{{ $item->name }}</h2>
+        @endif
+        @if ($item->content)
+        {!! $item->content !!}
+            @endif
+        @if ($item->content2)
+        <div class="team__blockquote">{!! $item->content2 !!}</div>
+        @endif
+           
+        
     </div>
 
     <div class="team__list">

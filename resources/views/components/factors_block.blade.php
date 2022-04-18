@@ -1,9 +1,13 @@
 @foreach ($post->blocks->where('type', 'factors') as $item)
     <div class="factors__block">
-        @if ($item->name)
+        @if ($item->name ?? $item->content)
             <div class="factors__heading">
-                <h2>{!! $item->name !!}</h2>
-                {!! $item->content !!}
+                @if ($item->name)
+                    <h2>{!! $item->name !!}</h2>
+                @endif
+                @if ($item->content)
+                    {!! $item->content !!}
+                @endif
             </div>
         @endif
 
@@ -12,11 +16,11 @@
                 <div class="factors__item">
 
                     <div class="factors__number">{{ $element['number'] }}</div>
-                    
+
                     <div class="factors__content">
-                       
+
                         <div class="factors__name">{{ $element['title'] }}</div>
-                        
+
                         <div class="factors__desc">
                             {!! $element['description'] !!}
                         </div>

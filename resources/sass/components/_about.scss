@@ -84,8 +84,26 @@
 
 
     .team__heading {
+        display: grid;
+        gap: 1rem;
         margin-bottom: 2rem;
         text-align: center;
+        .team__blockquote{
+            blockquote {
+                text-align: left;
+                font-size: 1.3rem;
+                padding: 2rem;
+                background: $gray-100;
+                font-style: italic;
+        
+        
+                strong {
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    font-style: normal;
+                }
+            }
+        }
 
         p {
             font-size: 1.3rem;

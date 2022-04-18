@@ -1,7 +1,9 @@
 @foreach ($post->blocks->where('type', 'experience') as $item)
     <div class="experience__block">
         <div class="exp__heading">
-            {{ $item->title }}
+            @if($item->name)
+            {{ $item->name }}
+            @endif
         </div>
         <div class="exp__content">
             @foreach ($item->repeater as $item)
