@@ -14,7 +14,16 @@ use App\Models\Team;
 
 class PostsController extends Controller
 {
- 
+    public function mainpage(){
+        $post = Post::where('slug', '=', '/')->firstOrFail();
+        $block = Block::all();
+        $blocks = $post->blocks;
+        if ($post)
+        
+        return view('homepage', compact('post', 'blocks'));
+        else
+        return response(view('errors.404'), 404);
+    }
 
     public function index($slug){
        
@@ -202,10 +211,5 @@ class PostsController extends Controller
         return $crumb;
     }
 
-    public function mainpage(){
-        $post = Post::where('id','=',1)->first();
-        $block = Block::all();
-        $blocks = $post->blocks;
-        return view('homepage', compact('post', 'blocks'));
-    }
+   
 }
