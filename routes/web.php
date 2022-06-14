@@ -15,6 +15,10 @@ use App\Http\Controllers\SitemapXmlController;
 */
 
 Route::get('/', [PostsController::class, 'mainpage']);
+// Технические работы
+Route::get('/', function(){
+    return redirect('404');
+});
 Route::get('/sitemap.xml', [SitemapXmlController::class, 'index']);
 
 
