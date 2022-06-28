@@ -25,6 +25,12 @@
 
 @section('content')
     <main>
+
+    
+
+      
+    
+
         @include('components.photo_block')
         @include('components.pagetitle')
         @include('components.about_block')

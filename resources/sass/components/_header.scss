@@ -34,12 +34,13 @@ header {
 
     padding: 0 6rem;
     z-index: 4;
+    border-bottom: 2px solid transparent;
 
     &.onscroll {
         position: sticky;
         width: 100%;
         background: white;
-        border-bottom: 2px solid $gray-100;
+        border-color:  $gray-100;
         // box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 
         .logo {

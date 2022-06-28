@@ -40,6 +40,6 @@
         </div>
     </div>
     <div class="bottom__footer">
-        <div>© {{ now()->year }} ГК «Дива». Все права защищены.</div>
+        <div>{{ now()->year }} ГК «Дива». Все права защищены.</div>
     </div>
 </footer>

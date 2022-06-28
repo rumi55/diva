@@ -1,3 +1,5 @@
+const { intersection } = require('lodash');
+
 window.addEventListener('load', (e) => {
     preload(e);
 
@@ -80,3 +82,6 @@ lightGallery(document.getElementById('anchor-tag'));
 lightGallery(document.querySelector("div.attachment-gallery"), {
     selector: 'a',
 });
+
+// intersection observers 
+require('./observers')
