@@ -13,7 +13,7 @@
 
         <div class="factors__list">
             @foreach ($item->repeater as $item => $element)
-                <div class="factors__item">
+                <div class="factors__item fade-in">
 
                     <div class="factors__number">{{ $element['number'] }}</div>
 

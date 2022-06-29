@@ -1,18 +1,18 @@
 
 @if ($post->gallery)
-    <div class="gallery__block">
+    <div class="gallery__block about-block">
 
 
         @if ($post->gallery_name)
-            <div class="gallery__heading">
+            <div class="gallery__heading fade-in">
                 <p class="h2">{{ $post->gallery_name }}</p>
                 <p>{{ $post->gallery_description }}</p>
             </div>
         @endif
 
-        <div class="gallery__images" id="anchor-tag">
+        <div class="gallery__images " id="anchor-tag">
             @foreach (array_reverse($post->gallery) as $item)
-                <a href="/storage/{{ $item }}">
+                <a href="/storage/{{ $item }}" class="fade-in">
                     <picture>
                         <source srcset="{{ ImageHelper::thumb($item, 'webp', 560, 315, '', 50) }}"
                              type="image/webp">

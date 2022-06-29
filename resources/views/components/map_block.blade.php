@@ -1,5 +1,5 @@
-<div class="map__section">
-    <div class="map__code">
+<div class="map__section fade-in">
+    <div class="map__code fade-in">
         <div style="position:relative;overflow:hidden;"><a
                 href="https://yandex.ru/maps/47/nizhny-novgorod/?utm_medium=mapframe&utm_source=maps"
                 style="color:#eee;font-size:12px;position:absolute;top:0px;">Нижний Новгород</a><a
@@ -8,7 +8,7 @@
                 src="https://yandex.ru/map-widget/v1/-/CCUBmDabWA" width="100%" height="100%" frameborder="1"
                 allowfullscreen="true" style="position:relative;" loading="lazy"></iframe></div>
     </div>
-    <div class="map__content">
+    <div class="map__content fade-in">
         <div class="map__header">Связаться с нами</div>
         <div class="map__text">
             <div><span>Адрес:</span><p>{{ $site->address_full }}</p></div>

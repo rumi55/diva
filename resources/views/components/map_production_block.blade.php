@@ -1,4 +1,4 @@
-<div class="mapprod__section">
+<div class="mapprod__section fade-in">
     <div class="mapprod__img">
         <picture>
             <source srcset="{{ ImageHelper::thumb('map.jpg', 'webp', 1600, 800, '', 50) }}"

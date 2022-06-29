@@ -2,7 +2,7 @@
     <div class="heading">Наши услуги</div>
     <div class="content__blocks about-block">
         @foreach (\App\Models\Post::where('category_id','3')->get() as $item)
-        <div class="service__card slide-in from-left">
+        <div class="service__card fade-in">
             @if ($item->preview)
             <picture>
                 <source srcset="{{ ImageHelper::thumb($item->preview, 'webp', 856, 428, '', 50) }}"

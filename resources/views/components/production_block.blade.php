@@ -2,7 +2,7 @@
     <h2>Мы выращиваем</h2>
     <div class="product__list featured__prod">
         @forelse (\App\Models\Product::where('featured', true)->orderBy('position')->get() as $item)
-            <div class="product__item">
+            <div class="product__item fade-in">
                 <div class="product__img">
                     <picture>
                         <source srcset="{{ ImageHelper::thumb($item->preview, 'webp', 300, 300, '', 100) }}"

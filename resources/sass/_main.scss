@@ -118,7 +118,7 @@ main {
 
     p {
         margin-top: 2rem;
-        font-size: 1.3rem;
+        font-size: 1.3em;
         font-weight: bold;
 
     }
@@ -127,7 +127,11 @@ main {
 @media screen and (max-width: $sm) {
     .page__title {
         h1 {
-            font-size: 2.3rem;
+            font-size: 2.3em;
+        }
+        p{
+            font-size: 1.2em;
+            font-weight: normal;
         }
     }
 }

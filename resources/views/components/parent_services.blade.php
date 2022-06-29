@@ -3,7 +3,7 @@
 
         <div class="services__list">
             @foreach ($categories as $category)
-                <div class="services__item">
+                <div class="services__item fade-in">
                     <a href="/{{ $category->slug }}" title="{{ $category->title }}">
                         @if ($category->preview)
                             <div class="service__img">

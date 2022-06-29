@@ -13,9 +13,9 @@
         
     </div>
 
-    <div class="team__list">
+    <div class="team__list fade-in">
         @foreach (\App\Models\Team::where('active', true)->get() as $item)
-            <div class="team__item">
+            <div class="team__item fade-in">
                 <div class="team__img">
                     <picture>
                         <source srcset="{{ ImageHelper::thumb($item->preview, 'webp', 207, 276, '', 80) }}"
