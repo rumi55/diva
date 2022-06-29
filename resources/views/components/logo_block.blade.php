@@ -1,5 +1,5 @@
 @foreach ($post->blocks->where('type', 'logo') as $item)
-    <div class="partners__logo">
+    <div class="partners__logo fade-in">
 
         @foreach (array_reverse($item->gallery) as $logo)
             <img src="/storage/{{ $logo }}" alt="">
@@ -10,21 +10,4 @@
         </div> --}}
     </div>
 @endforeach
-{{-- <div class="partners__logo">
-    <img src="{{ asset('img/logo/4.svg') }}" alt="">
-    <img src="{{ asset('img/logo/10.svg') }}" alt="">
-    <img src="{{ asset('img/logo/11.svg') }}" alt="">
-    <img src="{{ asset('img/logo/1.svg') }}" alt="">
-    <img src="{{ asset('img/logo/2.svg') }}" alt="">
-    <img src="{{ asset('img/logo/3.svg') }}" alt="">
-    <img src="{{ asset('img/logo/5.svg') }}" alt="">
-    <img src="{{ asset('img/logo/9.svg') }}" alt="">
-    <img src="{{ asset('img/logo/8.svg') }}" alt="">
-    <img src="{{ asset('img/logo/6.svg') }}" alt="">
-    <img src="{{ asset('img/logo/12.svg') }}" alt="">
-    <img src="{{ asset('img/logo/7.svg') }}" alt="">
-    <div class="partners__offer">
-        <span>Хотите работать с нами?</span>
-        <a href="">Узнать больше</a>
-    </div>
-</div> --}}
+

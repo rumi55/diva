@@ -7,7 +7,7 @@
         </div>
         <div class="exp__content">
             @foreach ($item->repeater as $item)
-                <div class="exp__item">
+                <div class="exp__item fade-in">
                     <div class="exp__number"><span>{{ $item['number'] }}</span> {{ $item['title'] }}</div>
 
                     <div class="exp__text">{{ $item['description'] }}</div>
