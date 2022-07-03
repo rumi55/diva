@@ -68,7 +68,7 @@
 
 
 @section('content')
-    <main>
+   
         <?php $post = $category; ?>
         @include('components.breadcrumbs')
 
@@ -86,5 +86,5 @@
         @include('components.text_block_2')
 
 
-    </main>
+ 
 @endsection

@@ -24,7 +24,7 @@
 
 
 @section('content')
-    <main>
+  
 
     
 
@@ -48,7 +48,7 @@
         @include('components.text_block_2')
         @include('components.map_block')
         @include('components.text_block_3')
-    </main>
+   
 
 
     {{-- <script>

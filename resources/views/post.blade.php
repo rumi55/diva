@@ -62,7 +62,7 @@
 @endsection
 
 @section('content')
-    <main>
+ 
 
         @include('components.breadcrumbs')
 
@@ -124,5 +124,5 @@
         @empty
         @endforelse
         @include('components.text_block_3')
-    </main>
+    
 @endsection

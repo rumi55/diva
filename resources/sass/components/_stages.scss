@@ -3,7 +3,8 @@
     .stages__heading {
         text-align: center;
         margin-bottom: 2rem;
-        h3{
+
+        h3 {
             font-size: 2.4rem;
         }
     }
@@ -34,8 +35,9 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                border: 2px solid $gray-200;
+                border: 2px solid transparent;
                 justify-content: space-between;
+                box-shadow: 0 0 20px rgba(0,0,0,.2);
 
 
                 label {
@@ -63,16 +65,22 @@
 
         div {
 
-            background-color: $gray-100;
+
             position: relative;
-            
+
 
             .tab__content {
                 border-radius: 1rem;
-            border: 2px solid $gray-200;
+                background: white;
+                box-shadow: 0 0 20px rgba(0,0,0,.1);
+                // border: 2px solid $gray-200;
                 padding: 2rem;
                 display: none;
                 font-size: 1.3rem;
+        .item__title{
+            font-size: 2rem;
+            font-weight: 600;
+        }
 
 
             }
@@ -106,6 +114,7 @@
 .stages__tab>input:nth-child(5):checked~div>div.tab__content:nth-child(5),
 .stages__tab>input:nth-child(6):checked~div>div.tab__content:nth-child(6) {
     display: flex;
+    flex-direction: column;
 }
 
 
@@ -115,8 +124,8 @@
     .stages__block {
         gap: 1rem;
 
-        .stages__heading{
-            h3{
+        .stages__heading {
+            h3 {
                 font-size: 2rem;
             }
         }
@@ -133,12 +142,7 @@
                 li {
                     gap: 1rem;
 
-                    label {
-
-                        
-
-
-                    }
+                    label {}
 
                     p {
                         font-size: 0.9rem;
@@ -167,22 +171,24 @@
 
     }
 }
+
 @media screen and (min-width:$sm) and (max-width:$md) {
 
     .stages__block {
         .stages__tab {
             ul {
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     }
 }
+
 @media screen and (min-width:$md) and (max-width:$lg) {
 
     .stages__block {
         .stages__tab {
             ul {
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     }

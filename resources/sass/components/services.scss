@@ -8,10 +8,12 @@
             border-radius: 1rem;
             overflow: hidden;
             transition: all 1s ease-in-out;
-            border: 2px solid $gray-100;
+            background: $gray-100;
+            box-shadow: 0 0 20px rgba(0,0,0,.1);
 
             &:hover {
                 background: white;
+                box-shadow: 0 0 20px rgba(0,0,0,.2);
 
             }
 

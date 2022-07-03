@@ -46,7 +46,7 @@ header {
         .logo {
             a {
 
-                img {
+                img,svg {
                     max-height: 2rem;
                     width: auto;
 
@@ -60,7 +60,7 @@ header {
         min-width: 20%;
 
         a {
-            img {
+            img,svg {
                 transition: all 0.05s ease-in-out;
                 max-height: 2rem;
                 width: auto;
@@ -150,7 +150,7 @@ header {
 
         &.onscroll {
             .logo {
-                img {
+                img,svg {
                     max-height: 2rem;
                     width: auto;
                 }
@@ -161,7 +161,7 @@ header {
             grid-area: logo;
 
             a {
-                img {
+                img,svg {
                     max-height: 2rem;
                     width: auto;
                 }

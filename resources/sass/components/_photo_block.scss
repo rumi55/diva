@@ -43,9 +43,18 @@
             display: flex;
             width: 50vmin;
             height: 50vmin;
-            background: radial-gradient(white, transparent);
+            background: radial-gradient(circle,white 22%, transparent);
+            box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.37);
             align-items: center;
             border-radius: 50%;
+            // animation-name: wrap;
+            // animation-duration: 4s;
+            // @keyframes wrap {
+            //     0%   {background: radial-gradient(white, transparent);}
+            //     25%  {background: radial-gradient(red, transparent);}
+            //     50%  {background: radial-gradient(green, transparent);}
+            //     100% {background: radial-gradient(blue, transparent);}
+            //   }
 
             svg {
                 max-height: 20vmin;

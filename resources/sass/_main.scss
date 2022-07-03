@@ -10,12 +10,14 @@ body {
     background: $gray-50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 
     &.preload * {
         -webkit-transition: none !important;
         -moz-transition: none !important;
         -ms-transition: none !important;
         -o-transition: none !important;
+        transition: none!important;
     }
 
     &.active,
@@ -129,18 +131,29 @@ main {
         h1 {
             font-size: 2.3em;
         }
-        p{
+
+        p {
             font-size: 1.2em;
             font-weight: normal;
         }
     }
 }
+
 @media screen and (min-width:$xxxl) {
-body{
-    max-width: $xxxl;
-    margin-right: auto;
-    margin-left: auto;
-    
-}
-    
+    body {
+        max-width: $xxxl;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .page__title {
+        p {
+            max-width: 50vmax;
+            margin: auto;
+            font-size: 1.3em;
+            font-weight: normal;
+        }
+    }
+
 }

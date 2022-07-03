@@ -67,11 +67,11 @@
 @endsection
 
 @section('content')
-    <main>
+   
         <?php $post = $category; ?>
         @include('components.breadcrumbs')
         @include('components.text_block_1')
         @include('components.productionmain_block')
         @include('components.text_block_2')
-    </main>
+ 
 @endsection

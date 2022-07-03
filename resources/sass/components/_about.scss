@@ -19,15 +19,15 @@
             background: $gray-100;
             padding: 2rem;
             border: 3px solid $gray-100;
-
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 0.5rem;
             transition: 0.5s ease-in-out;
 
             &:hover {
                 // background: linear-gradient(transparent, $gray-100);
                 background: white;
-                // box-shadow: 0 0 10px 0px $stone-300;
-                // border: 3px solid $gray-100;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                border-color: transparent;
             }
 
             .about__logo {
@@ -95,6 +95,8 @@
                 padding: 2rem;
                 background: $gray-100;
                 font-style: italic;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                border-radius: 0.5rem;
         
         
                 strong {
@@ -203,11 +205,14 @@
         .exp__item {
             padding: 1rem 1.4rem;
             background: $gray-100;
-            border: 3px solid $gray-100;
+            border: 2px solid transparent;
             transition: all 0.5s ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
 
             &:hover {
                 background: white;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
                 &.exp__number {
                     transform: scale(1.05)
