@@ -21,7 +21,7 @@
                 border-radius: 1rem;
                 background: $gray-100;
                 // border: 2px solid white;
-                // box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+                box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 
                 font-size: 1.3rem;
 
@@ -87,7 +87,7 @@
 
 
         .company__cards__list {
-            grid-template-columns: 5fr 4fr;
+            grid-template-columns: 1fr;
 
             .company__cards__item {
                 &.company__phones {}
@@ -116,7 +116,7 @@
 
 
         .company__cards__list {
-            grid-template-columns: 4fr 3fr;
+            grid-template-columns: 1fr;
 
             .company__cards__item {
                 &.company__phones {}

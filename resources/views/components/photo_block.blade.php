@@ -22,7 +22,7 @@
     <div class="photo__content">
 
         <div class="photo__logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325.01 397.87">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325.01 397.87" fill="green" style="max-height: 20vmin;">
                 <path d="M17.07,382.3h-6v15.14H7.69V379.35h9.38Z" />
                 <path
                     d="M35.06,384.84a5.47,5.47,0,0,1-1.62,4.27,6.78,6.78,0,0,1-4.68,1.46h-2v6.87H23.38V379.35H28.3Q35.07,379.35,35.06,384.84Zm-3.38.09q0-2.76-3.83-2.76H26.77v5.58H28Q31.68,387.75,31.68,384.93Z" />

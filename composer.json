@@ -8,7 +8,7 @@
         "php": "^8.0.2",
         "awcodes/filament-sticky-header": "^1.0",
         "dipeshsukhia/laravel-html-minify": "^2.0",
-        "filament/filament": "^2.0",
+        "filament/filament": "^2.1",
         "filament/spatie-laravel-settings-plugin": "^2.0",
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.2",
@@ -44,7 +44,8 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan filament:upgrade"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

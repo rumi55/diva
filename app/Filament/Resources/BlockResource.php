@@ -161,6 +161,8 @@ class BlockResource extends Resource
                                 // 'team_short' => 'Сотрудники (избранное)',
                                 'products' => 'Ассортимент',
                                 'files' => 'Файлы',
+                                'form_first' => 'Связаться с нами',
+                                'form_second' => 'Обратный звонок',
                             ])
                             ->columnSpan([
                                 'sm' => 2,
@@ -206,14 +208,17 @@ class BlockResource extends Resource
                 ->extraAttributes(['class' => 'text-sm'])
                 ->sortable(),
             Tables\Columns\TextColumn::make('type')->enum([
-                'about' => 'О нас',
-                'partners' => 'Партнеры',
-                'secret' => 'Секрет успеха',
-                'stages' => 'Этапы',
-                'agricultural' => 'Производитель сельхозпродукции',
-                'plan' => 'План расширения',
-                'contact' => 'Контакты',
-                'strategy' => 'Стратегия развития',
+                // 'about' => 'О нас',
+                // 'partners' => 'Партнеры',
+                // 'secret' => 'Секрет успеха',
+                // 'stages' => 'Этапы',
+                // 'agricultural' => 'Производитель сельхозпродукции',
+                // 'plan' => 'План расширения',
+                // 'contact' => 'Контакты',
+                // 'strategy' => 'Стратегия развития',
+                // 'factors' => 'Факторы',
+                // 'contat-form-1' => 'Связаться с нами',
+                // 'contat-form-2' => 'Обратный звонок',
                 ])
             
                 ->label('Тип')

@@ -16,16 +16,16 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\RichEditor;
 use App\Models\Category;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\BelongsToManyMultiSelect;
 use Filament\Forms\Components\MultiSelect;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Block;
 use Filament\Forms\Components\BelongsToManyCheckboxList;
-use Filament\Forms\Components\BelongsToSelect;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\HasManyRepeater;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Builder;
+use FilamentTiptapEditor\TiptapEditor;
 
 class PostResource extends Resource
 {
@@ -87,6 +87,7 @@ class PostResource extends Resource
                                         ->columnSpan([
                                             'sm' => 2,
                                         ]),
+                                      
                                 ]),
                             Tabs\Tab::make('SEO')
                                 ->schema([
@@ -120,10 +121,11 @@ class PostResource extends Resource
                                         ->columnSpan([
                                             'sm' => 2,
                                         ]),
+                                        
                                 ]),
                             Tabs\Tab::make('Блоки')
                                 ->schema([
-                                    BelongsToManyMultiSelect::make('select')
+                                    MultiSelect::make('select')
                                         ->label('Выбрать блоки')
                                         ->relationship('blocks', 'title')
                                         ->options(Block::all()->pluck('title', 'id'))
@@ -136,7 +138,7 @@ class PostResource extends Resource
 
                     Forms\Components\Card::make()
                         ->schema([
-                            Forms\Components\BelongsToSelect::make('category_id')
+                            Select::make('category_id')
                                 ->label('Категория')
                                 ->placeholder('Выбрать')
                                 ->relationship('category', 'title')

@@ -38,6 +38,8 @@
                 border: 2px solid transparent;
                 justify-content: space-between;
                 box-shadow: 0 0 20px rgba(0,0,0,.2);
+                overflow-x: none;
+                
 
 
                 label {
@@ -89,7 +91,11 @@
 
 
 }
-
+.stages__tab{
+    input{
+        display: none;
+    }
+}
 
 
 

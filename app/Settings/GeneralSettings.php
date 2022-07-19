@@ -23,4 +23,8 @@ class GeneralSettings extends Settings
     {
         return 'site';
     }
+    public static function getEmail()
+    {
+        return self::$email;
+    }
 }

@@ -1,29 +1,17 @@
 .map__section {
     position: relative;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
 
 
-    .map__code {
-        width: 70vw;
-        height: 50vh;
-        box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
-        filter: grayscale(0.7);
 
-        div {
-            border-radius: 1rem;
-            height: 100%;
-        }
-
-
-    }
 
     .map__content {
-        position: absolute;
-        top: 15%;
-        right: 0;
 
         padding: 2rem;
-        background: $stone-200;
         border-radius: 1rem;
+        background: $gray-100;
         box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
 
         .map__header {
@@ -35,13 +23,31 @@
         .map__text {
             display: grid;
             gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                'contact__address contact__address'
+                'contact__phone contact__phone-sec'
+                'contact__email .'
+            ;
 
             // color: white;
             div {
                 display: grid;
 
-                &.map__phone {
-                    grid-template-columns: repeat(2, 1fr);
+                &:nth-child(1) {
+                    grid-area: contact__address;
+                }
+
+                &:nth-child(2) {
+                    grid-area: contact__phone;
+                }
+
+                &:nth-child(3) {
+                    grid-area: contact__phone-sec;
+                }
+
+                &:nth-child(4) {
+                    grid-area: contact__email;
                 }
 
                 span {
@@ -52,27 +58,51 @@
 
     }
 }
-
-@media screen and (max-width:$xs) {
+@media screen and (max-width:$sm){
     .map__section {
-        display: grid;
-        grid-template-areas: 'map__content'
-            'map__code';
-
-        .map__code {
-            grid-area: map__code;
-            width: 100%;
-            height: 30vh;
-            margin-top: -3rem;
-            border-radius: 1rem;
-        }
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (min-width:$sm) and (max-width:$md) {
+    .map__section {
+        grid-template-columns: 1fr;
 
         .map__content {
-            position: static;
-            grid-area: map__content;
-            z-index: 2;
+
             border-radius: 1rem 1rem 0 0;
+            .map__text {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas:
+                    'contact__address contact__address contact__address'
+                    'contact__phone contact__phone-sec contact__email'
+                    
+                ;
+            }
         }
+
+    }
+}
+
+@media screen and (min-width:$md) and(max-width:$lg) {
+    .map__section {
+        .map__content {
+            .map__text {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    'contact__address'
+                    'contact__phone'
+                    'contact__phone-sec'
+                    'contact__email'
+                ;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:$lg) and (max-width: $xl) {
+    .map__section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -111,7 +141,7 @@
 
     .mapprod__content {
         padding: 2rem;
-        margin:  0 0 0 2rem;
+        margin: 0 0 0 2rem;
         background: $gray-100;
         border-radius: 1rem;
         z-index: 2;
@@ -128,12 +158,13 @@
                 font-weight: 500;
             }
         }
-        .mapprod__link{
-            a{
+
+        .mapprod__link {
+            a {
                 padding: 1rem;
                 background: $gray-200;
 
-                &:hover{
+                &:hover {
                     background: green;
                     color: white;
                 }
@@ -157,11 +188,13 @@
 @media screen and (min-width:$xl) and (max-width:$xxl) {
     .mapprod__section {
         grid-template-columns: 1fr 1fr;
+
         .mapprod__content {
             margin: 0 0 0 2rem;
         }
-        .mapprod__img{
-            img{
+
+        .mapprod__img {
+            img {
                 height: 100%;
             }
         }
@@ -169,3 +202,25 @@
 }
 
 // Map production END
+
+.company__form-map{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    .company__map{
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+        div{
+            
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+@media screen and (max-width:$md){
+    .company__form-map{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

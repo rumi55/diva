@@ -28,7 +28,7 @@ return new class extends Migration
             $table->longText('content3')->nullable();
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->foreignId('block_id')->nullable()->constrained('blocks')->nullOnDelete();
-            $table->enum('type', ['main','about','contacts','news', 'service']);
+            $table->enum('type', ['main','about','contacts','news', 'service', 'form_first', 'form_second']);
             $table->unsignedSmallInteger('position')->nullable();
             $table->boolean('active')->default(true);
             $table->json('gallery')->nullable();

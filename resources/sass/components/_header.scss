@@ -58,10 +58,11 @@ header {
 
     .logo {
         min-width: 20%;
+        
 
         a {
             img,svg {
-                transition: all 0.05s ease-in-out;
+                fill: green;
                 max-height: 2rem;
                 width: auto;
             }
@@ -143,10 +144,8 @@ header {
 
     header {
         padding: 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 'logo burger'
-            'navbar navbar';
+       display: flex;
+       justify-content: space-between;
 
         &.onscroll {
             .logo {
@@ -243,7 +242,7 @@ header {
 
                     label {
                         display: flex;
-                        justify-content: end;
+                        justify-content: flex-end;
                         padding-right: 1rem;
                     }
                 }
@@ -270,7 +269,7 @@ header {
     .menu-icon {
 
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
     }
 
     #menuToggle~nav {

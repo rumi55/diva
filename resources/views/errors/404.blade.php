@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('content')
 
-<main>
     <div class="error__404">
       <div class="content">
         <h1>404 cтраница не найдена</h1>
@@ -10,5 +9,4 @@
     </div>
    
     
-</main>
 @endsection

@@ -2,17 +2,13 @@
 
 @section('seo_title')
     @if ($post->seo_title)
-        {{ $post->seo_title }}
-    @else
-        {{ $post->title }}
+        {{ $post->seo_title }}@else{{ $post->title }}
     @endif
 @endsection
 
 @section('seo_description')
     @if ($post->seo_description)
-        {{ $post->seo_description }}
-    @else
-        {{ $post->description }}
+        {{ $post->seo_description }}@else{{ $post->description }}
     @endif
 @endsection
 @section('description')
@@ -24,31 +20,25 @@
 
 
 @section('content')
-  
+    @include('components.photo_block')
+    @include('components.pagetitle')
+    @include('components.about_block')
 
-    
+    @include('components.chart_block')
 
-      
-    
+    {{-- @include('components.logo_block') --}}
+    @include('components.services_main')
+    @include('components.text_block_1')
 
-        @include('components.photo_block')
-        @include('components.pagetitle')
-        @include('components.about_block')
-        @include('components.chart_block')
+    @forelse ($post->blocks->where('type', 'factors') as $item)
+        @include('components.factors_block')
+    @empty
+    @endforelse
+    @include('components.gallery_block')
+    @include('components.text_block_2')
+    @include('components.map_block')
+    @include('components.text_block_3')
 
-        {{-- @include('components.logo_block') --}}
-        @include('components.services_main')
-        @include('components.text_block_1')
-       
-        @forelse ($post->blocks->where('type', 'factors') as $item)
-            @include('components.factors_block')
-        @empty
-        @endforelse
-        @include('components.gallery_block')
-        @include('components.text_block_2')
-        @include('components.map_block')
-        @include('components.text_block_3')
-   
 
 
     {{-- <script>
@@ -101,4 +91,5 @@
             slideInterval = setInterval(nextSlide, intervalTime);
         }
     </script> --}}
+   
 @endsection

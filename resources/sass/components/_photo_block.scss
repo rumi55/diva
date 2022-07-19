@@ -120,11 +120,11 @@
 
         .photo__content {
             .photo__logo {
-                width: 50vmin;
-                height: 50vmin;
+                width: 36vmin;
+                height: 36vmin;
 
                 svg {
-                    // height: 8rem;
+                    max-height: 26vmin;
                     
                 }
             }

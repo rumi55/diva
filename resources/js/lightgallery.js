@@ -1,5 +1,5 @@
 /** Polyfill the CustomEvent() constructor functionality in Internet Explorer 9 and higher */
-(function() {
+(function () {
 
     if (typeof window.CustomEvent === 'function') {
         return false;
@@ -169,7 +169,7 @@ function Plugin(element, options) {
     return this;
 }
 
-Plugin.prototype.init = function() {
+Plugin.prototype.init = function () {
 
     var _this = this;
 
@@ -187,7 +187,7 @@ Plugin.prototype.init = function() {
         utils.addClass(document.body, 'lg-from-hash');
         if (!utils.hasClass(document.body, 'lg-on')) {
             utils.addClass(document.body, 'lg-on');
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.build(_this.index);
             });
         }
@@ -202,7 +202,7 @@ Plugin.prototype.init = function() {
         // prevent accidental double execution
         if (!utils.hasClass(document.body, 'lg-on')) {
             utils.addClass(document.body, 'lg-on');
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.build(_this.index);
             });
         }
@@ -211,7 +211,7 @@ Plugin.prototype.init = function() {
         for (var i = 0; i < _this.items.length; i++) {
 
             /*jshint loopfunc: true */
-            (function(index) {
+            (function (index) {
 
                 // Using different namespace for click because click event should not unbind if selector is same object('this')
                 utils.on(_this.items[index], 'click.lgcustom', (e) => {
@@ -236,7 +236,7 @@ Plugin.prototype.init = function() {
 
 };
 
-Plugin.prototype.build = function(index) {
+Plugin.prototype.build = function (index) {
 
     var _this = this;
 
@@ -257,7 +257,7 @@ Plugin.prototype.build = function(index) {
 
         _this.arrow();
 
-        setTimeout(function() {
+        setTimeout(function () {
             _this.enableDrag();
             _this.enableSwipe();
         }, 50);
@@ -274,33 +274,33 @@ Plugin.prototype.build = function(index) {
     utils.trigger(_this.el, 'onAfterOpen');
 
     // Hide controllers if mouse doesn't move for some period
-    if(_this.s.hideBarsDelay > 0) {
+    if (_this.s.hideBarsDelay > 0) {
 
         // Hide controls if user doesn't use mouse or touch after opening gallery
-        const initialHideBarTimeout = setTimeout(function() {
+        const initialHideBarTimeout = setTimeout(function () {
             utils.addClass(_this.outer, 'lg-hide-items');
         }, _this.s.hideBarsDelay);
-        utils.on(_this.outer, 'mousemove.lg click.lg touchstart.lg', function() {
-            
+        utils.on(_this.outer, 'mousemove.lg click.lg touchstart.lg', function () {
+
             // Cancel initalHideBarTimout if user uses mouse or touch events
             // Before it fires
             clearTimeout(initialHideBarTimeout);
-            
+
             utils.removeClass(_this.outer, 'lg-hide-items');
-    
+
             clearTimeout(_this.hideBartimeout);
-    
+
             // Timeout will be cleared on each slide movement also
-            _this.hideBartimeout = setTimeout(function() {
+            _this.hideBartimeout = setTimeout(function () {
                 utils.addClass(_this.outer, 'lg-hide-items');
             }, _this.s.hideBarsDelay);
-    
+
         });
     }
 
 };
 
-Plugin.prototype.structure = function() {
+Plugin.prototype.structure = function () {
     var list = '';
     var controls = '';
     var i = 0;
@@ -360,8 +360,8 @@ Plugin.prototype.structure = function() {
 
     // For fixed height gallery
     _this.setTop();
-    utils.on(window, 'resize.lg orientationchange.lg', function() {
-        setTimeout(function() {
+    utils.on(window, 'resize.lg orientationchange.lg', function () {
+        setTimeout(function () {
             _this.setTop();
         }, 100);
     });
@@ -395,12 +395,12 @@ Plugin.prototype.structure = function() {
         utils.setVendor(inner, 'TransitionDuration', this.s.speed + 'ms');
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
         utils.addClass(document.querySelector('.lg-backdrop'), 'in');
     });
 
 
-    setTimeout(function() {
+    setTimeout(function () {
         utils.addClass(_this.outer, 'lg-visible');
     }, this.s.backdropDuration);
 
@@ -414,7 +414,7 @@ Plugin.prototype.structure = function() {
 };
 
 // For fixed height gallery
-Plugin.prototype.setTop = function() {
+Plugin.prototype.setTop = function () {
     if (this.s.height !== '100%') {
         let wH = window.innerHeight;
         let top = (wH - parseInt(this.s.height, 10)) / 2;
@@ -428,9 +428,9 @@ Plugin.prototype.setTop = function() {
 };
 
 // Find css3 support
-Plugin.prototype.doCss = function() {
+Plugin.prototype.doCss = function () {
     // check for css animation support
-    var support = function() {
+    var support = function () {
         var transition = ['transition', 'MozTransition', 'WebkitTransition', 'OTransition', 'msTransition', 'KhtmlTransition'];
         var root = document.documentElement;
         var i = 0;
@@ -454,7 +454,7 @@ Plugin.prototype.doCss = function() {
  *  @return {Object} video type
  *  Ex:{ youtube  :  ["//www.youtube.com/watch?v=c0asJgSyxcY", "c0asJgSyxcY"] }
  */
-Plugin.prototype.isVideo = function(src, index) {
+Plugin.prototype.isVideo = function (src, index) {
 
     var html;
     if (this.s.dynamic) {
@@ -497,7 +497,7 @@ Plugin.prototype.isVideo = function(src, index) {
  *  @desc Create image counter
  *  Ex: 1/10
  */
-Plugin.prototype.counter = function() {
+Plugin.prototype.counter = function () {
     if (this.s.counter) {
         this.outer.querySelector(this.s.appendCounterTo).insertAdjacentHTML('beforeend', '<div id="lg-counter" role="status" aria-live="polite"><span id="lg-counter-current">' + (parseInt(this.index, 10) + 1) + '</span> / <span id="lg-counter-all">' + this.items.length + '</span></div>');
     }
@@ -507,7 +507,7 @@ Plugin.prototype.counter = function() {
  *  @desc add sub-html into the slide
  *  @param {Number} index - index of the slide
  */
-Plugin.prototype.addHtml = function(index) {
+Plugin.prototype.addHtml = function (index) {
     var subHtml = null;
     var currentEle;
     if (this.s.dynamic) {
@@ -563,7 +563,7 @@ Plugin.prototype.addHtml = function(index) {
  *  @desc Preload slides
  *  @param {Number} index - index of the slide
  */
-Plugin.prototype.preload = function(index) {
+Plugin.prototype.preload = function (index) {
     var i = 1;
     var j = 1;
     for (i = 1; i <= this.s.preload; i++) {
@@ -589,7 +589,7 @@ Plugin.prototype.preload = function(index) {
  *  @param {Boolean} rec - if true call loadcontent() function again.
  *  @param {Boolean} delay - delay for adding complete class. it is 0 except first time.
  */
-Plugin.prototype.loadContent = function(index, rec, delay) {
+Plugin.prototype.loadContent = function (index, rec, delay) {
 
     var _this = this;
     var _hasPoster = false;
@@ -600,7 +600,7 @@ Plugin.prototype.loadContent = function(index, rec, delay) {
     var _sizes;
     var _html;
     var _alt;
-    var getResponsiveSrc = function(srcItms) {
+    var getResponsiveSrc = function (srcItms) {
         var rsWidth = [];
         var rsSrc = [];
         for (var i = 0; i < srcItms.length; i++) {
@@ -740,7 +740,7 @@ Plugin.prototype.loadContent = function(index, rec, delay) {
         utils.addClass(_this.___slide[index], 'lg-loaded');
     }
 
-    utils.on(_this.___slide[index].querySelector('.lg-object'), 'load.lg error.lg', function() {
+    utils.on(_this.___slide[index].querySelector('.lg-object'), 'load.lg error.lg', function () {
 
         // For first time add some delay for displaying the start animation.
         var _speed = 0;
@@ -751,7 +751,7 @@ Plugin.prototype.loadContent = function(index, rec, delay) {
             _speed = delay;
         }
 
-        setTimeout(function() {
+        setTimeout(function () {
             utils.addClass(_this.___slide[index], 'lg-complete');
 
             utils.trigger(_this.el, 'onSlideItemLoad', {
@@ -769,7 +769,7 @@ Plugin.prototype.loadContent = function(index, rec, delay) {
 
     if (rec === true) {
         if (!utils.hasClass(_this.___slide[index], 'lg-complete')) {
-            utils.on(_this.___slide[index].querySelector('.lg-object'), 'load.lg error.lg', function() {
+            utils.on(_this.___slide[index].querySelector('.lg-object'), 'load.lg error.lg', function () {
                 _this.preload(index);
             });
         } else {
@@ -800,7 +800,7 @@ Plugin.prototype.loadContent = function(index, rec, delay) {
 *   @param {Boolean} fromTouch - true if slide function called via touch event or mouse drag
 *   @param {Boolean} fromThumb - true if slide function called via thumbnail click
 */
-Plugin.prototype.slide = function(index, fromTouch, fromThumb) {
+Plugin.prototype.slide = function (index, fromTouch, fromThumb) {
 
     var _prevIndex = 0;
     for (var i = 0; i < this.___slide.length; i++) {
@@ -857,7 +857,7 @@ Plugin.prototype.slide = function(index, fromTouch, fromThumb) {
         if (this.s.appendSubHtmlTo === '.lg-sub-html') {
 
             // wait for slide animation to complete
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.addHtml(index);
             }, _time);
         }
@@ -901,7 +901,7 @@ Plugin.prototype.slide = function(index, fromTouch, fromThumb) {
             }
 
             // give 50 ms for browser to add/remove class
-            setTimeout(function() {
+            setTimeout(function () {
                 utils.removeClass(_this.outer.querySelector('.lg-current'), 'lg-current');
 
                 //_this.$slide.eq(_prevIndex).removeClass('lg-current');
@@ -936,11 +936,11 @@ Plugin.prototype.slide = function(index, fromTouch, fromThumb) {
         }
 
         if (_this.lGalleryOn) {
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.loadContent(index, true, 0);
             }, this.s.speed + 50);
 
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.lgBusy = false;
                 utils.trigger(_this.el, 'onAfterSlide', {
                     prevIndex: _prevIndex,
@@ -978,7 +978,7 @@ Plugin.prototype.slide = function(index, fromTouch, fromThumb) {
  *  @desc Go to next slide
  *  @param {Boolean} fromTouch - true if slide function called via touch event
  */
-Plugin.prototype.goToNextSlide = function(fromTouch) {
+Plugin.prototype.goToNextSlide = function (fromTouch) {
     var _this = this;
     if (!_this.lgBusy) {
         if ((_this.index + 1) < _this.___slide.length) {
@@ -996,7 +996,7 @@ Plugin.prototype.goToNextSlide = function(fromTouch) {
                 _this.slide(_this.index, fromTouch, false);
             } else if (_this.s.slideEndAnimatoin) {
                 utils.addClass(_this.outer, 'lg-right-end');
-                setTimeout(function() {
+                setTimeout(function () {
                     utils.removeClass(_this.outer, 'lg-right-end');
                 }, 400);
             }
@@ -1008,7 +1008,7 @@ Plugin.prototype.goToNextSlide = function(fromTouch) {
  *  @desc Go to previous slide
  *  @param {Boolean} fromTouch - true if slide function called via touch event
  */
-Plugin.prototype.goToPrevSlide = function(fromTouch) {
+Plugin.prototype.goToPrevSlide = function (fromTouch) {
     var _this = this;
     if (!_this.lgBusy) {
         if (_this.index > 0) {
@@ -1028,7 +1028,7 @@ Plugin.prototype.goToPrevSlide = function(fromTouch) {
                 _this.slide(_this.index, fromTouch, false);
             } else if (_this.s.slideEndAnimatoin) {
                 utils.addClass(_this.outer, 'lg-left-end');
-                setTimeout(function() {
+                setTimeout(function () {
                     utils.removeClass(_this.outer, 'lg-left-end');
                 }, 400);
             }
@@ -1036,10 +1036,10 @@ Plugin.prototype.goToPrevSlide = function(fromTouch) {
     }
 };
 
-Plugin.prototype.keyPress = function() {
+Plugin.prototype.keyPress = function () {
     var _this = this;
     if (this.items.length > 1) {
-        utils.on(window, 'keyup.lg', function(e) {
+        utils.on(window, 'keyup.lg', function (e) {
             if (_this.items.length > 1) {
                 if (e.keyCode === 37) {
                     e.preventDefault();
@@ -1054,7 +1054,7 @@ Plugin.prototype.keyPress = function() {
         });
     }
 
-    utils.on(window, 'keydown.lg', function(e) {
+    utils.on(window, 'keydown.lg', function (e) {
         if (_this.s.escKey === true && e.keyCode === 27) {
             e.preventDefault();
             if (!utils.hasClass(_this.outer, 'lg-thumb-open')) {
@@ -1066,18 +1066,18 @@ Plugin.prototype.keyPress = function() {
     });
 };
 
-Plugin.prototype.arrow = function() {
+Plugin.prototype.arrow = function () {
     var _this = this;
-    utils.on(this.outer.querySelector('.lg-prev'), 'click.lg', function() {
+    utils.on(this.outer.querySelector('.lg-prev'), 'click.lg', function () {
         _this.goToPrevSlide();
     });
 
-    utils.on(this.outer.querySelector('.lg-next'), 'click.lg', function() {
+    utils.on(this.outer.querySelector('.lg-next'), 'click.lg', function () {
         _this.goToNextSlide();
     });
 };
 
-Plugin.prototype.arrowDisable = function(index) {
+Plugin.prototype.arrowDisable = function (index) {
 
     // Disable arrows if s.hideControlOnEnd is true
     if (!this.s.loop && this.s.hideControlOnEnd) {
@@ -1101,7 +1101,7 @@ Plugin.prototype.arrowDisable = function(index) {
     }
 };
 
-Plugin.prototype.setTranslate = function(el, xValue, yValue) {
+Plugin.prototype.setTranslate = function (el, xValue, yValue) {
     // jQuery supports Automatic CSS prefixing since jQuery 1.8.0
     if (this.s.useLeft) {
         el.style.left = xValue;
@@ -1110,7 +1110,7 @@ Plugin.prototype.setTranslate = function(el, xValue, yValue) {
     }
 };
 
-Plugin.prototype.touchMove = function(startCoords, endCoords) {
+Plugin.prototype.touchMove = function (startCoords, endCoords) {
 
     var distance = endCoords - startCoords;
 
@@ -1127,7 +1127,7 @@ Plugin.prototype.touchMove = function(startCoords, endCoords) {
     }
 };
 
-Plugin.prototype.touchEnd = function(distance) {
+Plugin.prototype.touchEnd = function (distance) {
     var _this = this;
 
     // keep slide animation for any mode while dragg/swipe
@@ -1142,7 +1142,7 @@ Plugin.prototype.touchEnd = function(distance) {
     }
 
     // set transition duration
-    setTimeout(function() {
+    setTimeout(function () {
         utils.removeClass(_this.outer, 'lg-dragging');
         if ((distance < 0) && (Math.abs(distance) > _this.s.swipeThreshold)) {
             _this.goToNextSlide(true);
@@ -1160,7 +1160,7 @@ Plugin.prototype.touchEnd = function(distance) {
     });
 
     // remove slide class once drag/swipe is completed if mode is not slide
-    setTimeout(function() {
+    setTimeout(function () {
         if (!utils.hasClass(_this.outer, 'lg-dragging') && _this.s.mode !== 'lg-slide') {
             utils.removeClass(_this.outer, 'lg-slide');
         }
@@ -1168,7 +1168,7 @@ Plugin.prototype.touchEnd = function(distance) {
 
 };
 
-Plugin.prototype.enableSwipe = function() {
+Plugin.prototype.enableSwipe = function () {
     var _this = this;
     var startCoords = 0;
     var endCoords = 0;
@@ -1178,7 +1178,7 @@ Plugin.prototype.enableSwipe = function() {
 
         for (var i = 0; i < _this.___slide.length; i++) {
             /*jshint loopfunc: true */
-            utils.on(_this.___slide[i], 'touchstart.lg', function(e) {
+            utils.on(_this.___slide[i], 'touchstart.lg', function (e) {
                 if (!utils.hasClass(_this.outer, 'lg-zoomed') && !_this.lgBusy) {
                     e.preventDefault();
                     _this.manageSwipeClass();
@@ -1189,7 +1189,7 @@ Plugin.prototype.enableSwipe = function() {
 
         for (var j = 0; j < _this.___slide.length; j++) {
             /*jshint loopfunc: true */
-            utils.on(_this.___slide[j], 'touchmove.lg', function(e) {
+            utils.on(_this.___slide[j], 'touchmove.lg', function (e) {
                 if (!utils.hasClass(_this.outer, 'lg-zoomed')) {
                     e.preventDefault();
                     endCoords = e.targetTouches[0].pageX;
@@ -1201,7 +1201,7 @@ Plugin.prototype.enableSwipe = function() {
 
         for (var k = 0; k < _this.___slide.length; k++) {
             /*jshint loopfunc: true */
-            utils.on(_this.___slide[k], 'touchend.lg', function() {
+            utils.on(_this.___slide[k], 'touchend.lg', function () {
                 if (!utils.hasClass(_this.outer, 'lg-zoomed')) {
                     if (isMoved) {
                         isMoved = false;
@@ -1216,7 +1216,7 @@ Plugin.prototype.enableSwipe = function() {
 
 };
 
-Plugin.prototype.enableDrag = function() {
+Plugin.prototype.enableDrag = function () {
     var _this = this;
     var startCoords = 0;
     var endCoords = 0;
@@ -1225,7 +1225,7 @@ Plugin.prototype.enableDrag = function() {
     if (_this.s.enableDrag && !_this.isTouch && _this.doCss()) {
         for (var i = 0; i < _this.___slide.length; i++) {
             /*jshint loopfunc: true */
-            utils.on(_this.___slide[i], 'mousedown.lg', function(e) {
+            utils.on(_this.___slide[i], 'mousedown.lg', function (e) {
                 // execute only on .lg-object
                 if (!utils.hasClass(_this.outer, 'lg-zoomed')) {
                     if (utils.hasClass(e.target, 'lg-object') || utils.hasClass(e.target, 'lg-video-play')) {
@@ -1253,7 +1253,7 @@ Plugin.prototype.enableDrag = function() {
             });
         }
 
-        utils.on(window, 'mousemove.lg', function(e) {
+        utils.on(window, 'mousemove.lg', function (e) {
             if (isDraging) {
                 isMoved = true;
                 endCoords = e.pageX;
@@ -1262,7 +1262,7 @@ Plugin.prototype.enableDrag = function() {
             }
         });
 
-        utils.on(window, 'mouseup.lg', function(e) {
+        utils.on(window, 'mouseup.lg', function (e) {
             if (isMoved) {
                 isMoved = false;
                 _this.touchEnd(endCoords - startCoords);
@@ -1282,7 +1282,7 @@ Plugin.prototype.enableDrag = function() {
     }
 };
 
-Plugin.prototype.manageSwipeClass = function() {
+Plugin.prototype.manageSwipeClass = function () {
     var touchNext = this.index + 1;
     var touchPrev = this.index - 1;
     var length = this.___slide.length;
@@ -1306,9 +1306,9 @@ Plugin.prototype.manageSwipeClass = function() {
     utils.addClass(this.___slide[touchNext], 'lg-next-slide');
 };
 
-Plugin.prototype.mousewheel = function() {
+Plugin.prototype.mousewheel = function () {
     var _this = this;
-    utils.on(_this.outer, 'mousewheel.lg', function(e) {
+    utils.on(_this.outer, 'mousewheel.lg', function (e) {
 
         if (!e.deltaY) {
             return;
@@ -1325,11 +1325,11 @@ Plugin.prototype.mousewheel = function() {
 
 };
 
-Plugin.prototype.closeGallery = function() {
+Plugin.prototype.closeGallery = function () {
 
     var _this = this;
     var mousedown = false;
-    utils.on(this.outer.querySelector('.lg-close'), 'click.lg', function() {
+    utils.on(this.outer.querySelector('.lg-close'), 'click.lg', function () {
         _this.destroy();
     });
 
@@ -1337,7 +1337,7 @@ Plugin.prototype.closeGallery = function() {
 
         // If you drag the slide and release outside gallery gets close on chrome
         // for preventing this check mousedown and mouseup happened on .lg-item or lg-outer
-        utils.on(_this.outer, 'mousedown.lg', function(e) {
+        utils.on(_this.outer, 'mousedown.lg', function (e) {
 
             if (utils.hasClass(e.target, 'lg-outer') || utils.hasClass(e.target, 'lg-item') || utils.hasClass(e.target, 'lg-img-wrap')) {
                 mousedown = true;
@@ -1347,7 +1347,7 @@ Plugin.prototype.closeGallery = function() {
 
         });
 
-        utils.on(_this.outer, 'mouseup.lg', function(e) {
+        utils.on(_this.outer, 'mouseup.lg', function (e) {
 
             if (utils.hasClass(e.target, 'lg-outer') || utils.hasClass(e.target, 'lg-item') || utils.hasClass(e.target, 'lg-img-wrap') && mousedown) {
                 if (!utils.hasClass(_this.outer, 'lg-dragging')) {
@@ -1361,7 +1361,7 @@ Plugin.prototype.closeGallery = function() {
 
 };
 
-Plugin.prototype.destroy = function(d) {
+Plugin.prototype.destroy = function (d) {
 
     var _this = this;
 
@@ -1417,7 +1417,7 @@ Plugin.prototype.destroy = function(d) {
     }
 
     utils.removeClass(document.querySelector('.lg-backdrop'), 'in');
-    setTimeout(function() {
+    setTimeout(function () {
         try {
             if (_this.outer) {
                 _this.outer.parentNode.removeChild(_this.outer);
@@ -1436,7 +1436,7 @@ Plugin.prototype.destroy = function(d) {
     }, _this.s.backdropDuration + 50);
 };
 
-window.lightGallery = function(el, options) {
+window.lightGallery = function (el, options) {
     if (!el) {
         return;
     }

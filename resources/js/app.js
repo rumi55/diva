@@ -1,8 +1,20 @@
+import lodash from 'lodash';
+import '../sass/app.scss';
+import './lightgallery';
+import './lg-utils';
+import './observers';
 
-const { intersection } = require('lodash');
+const {
+    intersection
+} = lodash;
+
+
+
+
 
 window.addEventListener('load', (e) => {
     preload(e);
+
 
 
     function preload(e) {
@@ -10,12 +22,13 @@ window.addEventListener('load', (e) => {
             document.body.classList.remove('preload');
         }
     }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener('click', (e) => {
 
-            // showUserModal(e);
+            closeModal(e);
 
             // cookie(e);
         });
@@ -29,9 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             overflowHidden(e);
 
+
         });
 
-
+        function closeModal(e) {
+            if (e.target.id == 'closeModal') {
+                document.getElementById("showModal").remove('modal-active');
+            }
+        }
 
 
         function overflowHidden(e) {
@@ -41,13 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (e.target.checked) {
                     return document.body.classList.add('active');
 
-
                 } else {
                     return document.body.classList.remove('active');
                 }
             }
 
-        }
+        };
+
+
         // Scrollbar
         function scrollbar(e) {
             if (e = window.screen.availWidth) {
@@ -71,18 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }),
 
 
+    //Lightgallery 
 
-
-
-
-
-    //Lightgallery
-    require('./lightgallery')
-require('./lg-utils')
 lightGallery(document.getElementById('anchor-tag'));
+
 lightGallery(document.querySelector("div.attachment-gallery"), {
     selector: 'a',
 });
-
-// intersection observers 
-require('./observers')

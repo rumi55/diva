@@ -1,0 +1,224 @@
+.contact__form-1 {
+    display: grid;
+    padding: 2rem;
+    background-color: $gray-100;
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+
+    .contact__heading {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            'form__name form__email form__phone '
+            'form__text form__text form__text'
+            'agree__msg agree__msg agree__msg'
+            'form__btn form__error form__error'
+        ;
+
+
+
+        .form__field {
+            position: relative;
+            display: grid;
+
+            .form__field-error {
+                position: absolute;
+                color: red;
+                font-size: 0.8em;
+                right: 0;
+                bottom: -1.2rem;
+
+            }
+        }
+
+        .form__name {
+
+            grid-area: form__name;
+        }
+
+        .form__email {
+
+            grid-area: form__email;
+        }
+
+        .form__phone {
+
+            grid-area: form__phone;
+        }
+
+        .form__text {
+
+            grid-area: form__text;
+        }
+
+        .agree-msg {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            grid-area: agree__msg;
+            color: green;
+            font-weight: 500;
+            font-size: 0.8em;
+        }
+
+        .form__bnt {
+            display: grid;
+            grid-area: form__btn;
+        }
+
+        .form__error {
+            grid-area: form__error;
+            display: flex;
+            color: red;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4em;
+        }
+
+        input[type='text'],
+        [type='email'],
+        [type='tel'],
+        textarea {
+            background: $gray-200;
+            border: 0;
+            border: 2px solid $gray-300;
+            border-radius: 0.6rem;
+
+
+            &:focus {
+                background: white;
+                --tw-ring-color: transparent;
+                border-color: green;
+
+            }
+        }
+
+        input[type='checkbox'] {
+            border-radius: 50%;
+            border: 2px solid green;
+            --tw-ring-color: transparent;
+
+            &:checked {
+                background-color: green;
+
+            }
+        }
+
+        button {
+            background: $gray-300;
+            padding: 1rem 2rem;
+            // font-weight: 500;
+            font-size: 1.2em;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: white;
+                background: green;
+            }
+        }
+    }
+}
+
+.form__modal {
+    display: none;
+    position: absolute;
+    inset: auto 0 auto 0;
+    padding: 2rem;
+    background: $gray-100;
+    border-radius: 1rem;
+    min-height: 12vh;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+    &.modal-active {
+        display: grid;
+    }
+
+    .modal__heading {
+        font-size: 2rem;
+    }
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2.6rem 1.5rem 2rem;
+        font-size: 1.6rem;
+        color: green;
+        line-height: 0;
+    }
+
+    @media screen and (min-width: 1080px) {
+        width: 30vw;
+    }
+
+}
+
+@media screen and (max-width: $sm) {
+    .contact__form-1 {
+        padding: 1rem;
+
+        form {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "form__name"
+                "form__email"
+                "form__phone"
+                "form__text"
+                "agree__msg"
+                "form__error"
+                "form__btn";
+
+            .agree-msg {
+                align-items: stretch;
+
+                input[type="checkbox"] {
+                    margin-top: 0.3rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width:$sm) and (max-width: $md) {
+    .contact__form-1 {
+        padding: 2rem;
+
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: $md) and (max-width: $xl) {
+    .contact__form-1 {
+        padding: 2rem;
+
+        form {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "form__name form__name"
+                "form__email form__phone"
+                "form__text form__text"
+                "agree__msg agree__msg"
+                "form__error form__error"
+                "form__btn form__btn";
+        }
+    }
+}

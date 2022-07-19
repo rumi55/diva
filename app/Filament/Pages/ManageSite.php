@@ -7,7 +7,6 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Pages\SettingsPage;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-
 class ManageSite extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-cog';
@@ -36,6 +35,12 @@ class ManageSite extends SettingsPage
             ,
             TextInput::make('address_full')
             ->label('Адрес (полный)')
+            ,
+            TextInput::make('gtm')
+            ->label('Google analytics')
+            ,
+            TextInput::make('yml')
+            ->label('Yandex.Metrika')
             ,
            
         ];

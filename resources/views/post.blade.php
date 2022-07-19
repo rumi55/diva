@@ -79,7 +79,10 @@
         @empty
         @endforelse
         @if ($post->type == 'contacts')
+    
             @include('components.company_cards')
+
+               @include('components.company__form-map')
         @else
             @include('components.text_block_1')
         @endif

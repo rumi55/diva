@@ -164,6 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         
+        
 
         /*
          * Package Service Providers...
@@ -177,6 +178,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
 
     ],
 
@@ -191,7 +193,8 @@ return [
     |
     */
     'aliases' => [
-        'ImageHelper' => App\Helpers\ImageHelper::class,   
+        'ImageHelper' => App\Helpers\ImageHelper::class,  
+        'Str' => Illuminate\Support\Str::class, 
     ],
 
 ];
