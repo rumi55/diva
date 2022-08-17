@@ -73,11 +73,14 @@
             <p class="menu__heading">Услуги</p>
             <nav class="list-none ">
                 <ul>
+                    @if (FilamentNavigation::get('bottom-1'))
                     @foreach (FilamentNavigation::get('bottom-1')->items as $item)
                         <li>
-                            <a href="{{ $item['data']['url'] }}">{{ $item['label'] }}</a>
+                            <a href="/{{ $item['data']['url'] }}">{{ $item['label'] }}</a>
                         </li>
                     @endforeach
+                    @endif
+                    
                 </ul>
             </nav>
         </div>
@@ -85,11 +88,13 @@
             <p class="menu__heading">О компании</p>
             <nav class="list-none ">
                 <ul>
+                    @if (FilamentNavigation::get('bottom-2'))
                     @foreach (FilamentNavigation::get('bottom-2')->items as $item)
                         <li>
-                            <a href="{{ $item['data']['url'] }}">{{ $item['label'] }}</a>
+                            <a href="/{{ $item['data']['url'] }}">{{ $item['label'] }}</a>
                         </li>
                     @endforeach
+                    @endif
                 </ul>
             </nav>
         </div>
